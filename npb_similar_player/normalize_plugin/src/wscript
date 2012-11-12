@@ -1,0 +1,17 @@
+plugin_names = ['normalize_num_filter','normalize_num_feature']
+
+def options(opt):
+  pass
+
+def configure(conf):
+  pass
+
+def build(bld):
+  for plugin_name in plugin_names:
+    bld.shlib(
+      source = plugin_name + '.cpp',
+      target = plugin_name,
+      use='JUBACONVERTER',
+      )
+
+
