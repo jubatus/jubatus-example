@@ -1,0 +1,12 @@
+#
+# distance : 駅からの徒歩時間 (分)
+# space    : 専有面積 (m*m)
+# age      : 築年数 (年)
+# stair    : 階数
+# aspect   : 向き [ N / NE / E / SE / S / SW / W / NW ]
+#
+distance : 8
+space    : 32.00
+age      : 15
+stair    : 5
+aspect   : "S"
