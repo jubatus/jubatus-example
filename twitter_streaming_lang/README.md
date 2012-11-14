@@ -3,6 +3,8 @@ Twitter Streaming Classification
 
 各言語版の Wikipedia データを Jubatus (Classifier) に学習させ、Twitter ストリームの言語を推定します。
 
+![Screenshot](https://github.com/jubatus/jubatus-example/raw/master/twitter_streaming_lang/screenshot.png)
+
 準備
 ----
 
