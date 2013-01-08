@@ -48,10 +48,10 @@ def create_graph(c, join_list):
         s2_node_id = add_station(c, join.station2)
 
         # Create bi-directional edge between two nodes.
-        edge_info_1 = types.edge_info({}, s1_node_id, s2_node_id)
-        edge_info_2 = types.edge_info({}, s2_node_id, s1_node_id)
-        c.create_edge(instance_name, s1_node_id, edge_info_1)
-        c.create_edge(instance_name, s2_node_id, edge_info_2)
+        edge_1 = types.edge({}, s1_node_id, s2_node_id)
+        edge_2 = types.edge({}, s2_node_id, s1_node_id)
+        c.create_edge(instance_name, s1_node_id, edge_1)
+        c.create_edge(instance_name, s2_node_id, edge_2)
 
     # Comment-out this line if you're running in distributed mode.
     c.update_index(instance_name)
