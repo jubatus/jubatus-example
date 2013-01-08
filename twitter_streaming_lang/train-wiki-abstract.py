@@ -42,29 +42,6 @@ class Handler(xml.sax.handler.ContentHandler):
 
 def train_wikipedia_abstract(label, xmlfile):
     classifier = client.classifier(host, port)
-    algorithm = "AROW"
-    config = {
-        "num_filter_types": {
-        },
-        "num_filter_rules": [
-        ],
-        "string_filter_types": {
-        },
-        "string_filter_rules": [
-        ],
-        "num_types": {
-        },
-        "num_rules": [
-        ],
-        "string_types": {
-            "bigram":  { "method": "ngram", "char_num": "2" }
-        },
-        "string_rules": [
-            { "key": "*", "type": "bigram", "sample_weight": "bin", "global_weight": "bin" }
-        ]
-    }
-
-    classifier.set_config(instance_name, types.config_data(algorithm, json.dumps(config)))
 
     parser = xml.sax.make_parser()
     parser.setContentHandler(Handler(classifier, label))
