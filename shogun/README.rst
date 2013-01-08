@@ -9,7 +9,7 @@
 準備
 ====
 
-- Jubauts 0.3.3 + Python クライアントをインストールします
+- Jubauts 0.4.0 + Python クライアントをインストールします
 
   - Python クライアントは `pip install jubatus` でインストールできます
 
@@ -21,7 +21,7 @@ jubaclassifier を起動します
 
 ::
 
- $ jubaclassifier &
+ $ jubaclassifier --configpath shogun.json &
 
 
 実行
