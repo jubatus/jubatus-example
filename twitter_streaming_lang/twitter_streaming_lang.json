@@ -15,6 +15,6 @@
     ]
   },
   "parameter": {
-    "regularization_weight" : 1.001
+    "regularization_weight" : 1.0
   }
 }
