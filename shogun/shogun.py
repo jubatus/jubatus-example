@@ -9,23 +9,7 @@ import json
 import random
 
 import jubatus
-from jubatus.classifier.types import config_data, datum
-
-def config(client):
-    conf = {
-        'string_filter_types': {},
-        'string_filter_rules': [],
-        'num_filter_types': {},
-        'num_filter_rules': [],
-        'string_types': {'unigram': {'method': 'ngram', 'char_num': '1'}},
-        'string_rules': [{'key': '*', 'type': 'unigram', 'sample_weight': 'bin', 'global_weight': 'bin'}],
-        'num_types': {},
-        'num_rules': []
-        }
-    # set configuration of classifier
-    # second argument of config_data must be json string
-    # of course you can load converter setting from a file
-    client.set_config(name, config_data('AROW', json.dumps(conf)))
+from jubatus.classifier.types import datum
 
 def train(client):
     # prepare training data
@@ -98,13 +82,12 @@ def predict(client):
     for d in data:
         res = client.classify(name, [d])
         # get the predicted shogun name
-        print max(res[0], key = lambda x: x.prob).label, d.string_values[0][1]
+        print max(res[0], key = lambda x: x.score).label, d.string_values[0][1]
 
 if __name__ == '__main__':
     # connect to the jubatus
     client = jubatus.Classifier(host, port)
     # run example
-    config(client)
     train(client)
     predict(client)
 

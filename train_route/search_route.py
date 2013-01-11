@@ -12,15 +12,15 @@ def search_route(from_id, to_id):
     c = client.graph(host, port)
 
     pq = types.preset_query([], [])
-    spreq = types.shortest_path_req(from_id, to_id, 100, pq)
-    stations = c.shortest_path(instance_name, spreq)
+    spreq = types.shortest_path_query(from_id, to_id, 100, pq)
+    stations = c.get_shortest_path(instance_name, spreq)
 
     print "Pseudo-Shortest Path (hops) from %s to %s:" % (from_id, to_id)
     for station in stations:
         node = c.get_node(instance_name, station)
         station_name = ''
-        if 'name' in node.p:
-            station_name = node.p['name']
+        if 'name' in node.property:
+            station_name = node.property['name']
         print "  %s\t%s" % (station, station_name)
 
 if __name__ == '__main__':

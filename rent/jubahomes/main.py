@@ -31,38 +31,11 @@ def parse_options():
 def main():
   args = parse_options()
 
-  client = regression('localhost', 9199)
-  method = "PA"
-  converter = """
-    {
-      \"string_filter_types\" : {},
-      \"string_filter_rules\" : [],
-      \"num_filter_types\" : {},
-      \"num_filter_rules\" : [],
-      \"string_types\" : {},
-      \"string_rules\" : [
-        {
-          \"key\" : \"aspect\",
-          \"type\" : \"str\",
-          \"sample_weight\" : \"bin\",
-          \"global_weight\" : \"bin\"
-        }
-      ],
-      \"num_types\" : {},
-      \"num_rules\" : [
-        {
-          \"key\" : \"*\",
-          \"type\" : \"num\"
-        }
-      ]
-    }
-  """
-  config = config_data(method, converter)
+  client = regression('127.0.0.1', 9199)
 
   # train
   num = 0
   if args.traindata:
-    client.set_config('', config)
     with open(args.traindata, 'r') as traindata:
       for data in traindata:
 

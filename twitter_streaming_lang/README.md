@@ -8,7 +8,7 @@ Twitter Streaming Classification
 準備
 ----
 
-* Jubatus 0.3.3 + Python クライアント、[tweepy](https://github.com/tweepy/tweepy) をインストールしてください。
+* Jubatus 0.4.0 + Python クライアント、[tweepy](https://github.com/tweepy/tweepy) をインストールしてください。
 
 * 各言語版の Wikipedia 要約データをダウンロードしてください (2 言語以上)。
 
@@ -27,7 +27,7 @@ Twitter Streaming Classification
 jubaclassifier を起動します。
 
 ```
-$ jubaclassifier --thread 12 &
+$ jubaclassifier --thread 12 --configpath twitter_streaming_lang.json &
 ```
 
 学習

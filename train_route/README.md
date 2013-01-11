@@ -6,7 +6,7 @@ Graph の `shortest_path` API を使用して、鉄道路線の最短経路 (ホ
 準備
 ----
 
-* Jubatus 0.3.4 + Python クライアントをインストールしてください。
+* Jubatus 0.4.0 + Python クライアントをインストールしてください。
 
 サーバの起動
 ------------
@@ -14,7 +14,7 @@ Graph の `shortest_path` API を使用して、鉄道路線の最短経路 (ホ
 jubagraph を起動します。
 
 ```
-$ jubagraph &
+$ jubagraph --configpath train_route.json &
 ```
 
 グラフの作成

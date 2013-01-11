@@ -11,11 +11,6 @@ if __name__ == '__main__':
 
     recommender = client.recommender("127.0.0.1",9199)
 
-    converter = open('./config.json').read()
-
-    config = types.config_data("inverted_index", converter)
-    recommender.set_config(NAME, config)
-
     for line in open('dat/baseball.csv'):
         pname, team, bave, games, pa, atbat, hit, homerun, runsbat, stolen, bob, hbp, strikeout, sacrifice, dp, slg, obp, ops, rc27, xr27 = line[:-1].split(',')
         datum = types.datum(
@@ -44,6 +39,3 @@ if __name__ == '__main__':
         ]
         )
         recommender.update_row(NAME, pname, datum)
-
-
-
