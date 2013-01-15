@@ -1,7 +1,7 @@
 Train Route: Pseudo Shortest Path by Hops
 =========================================
 
-Graph の `shortest_path` API を使用して、鉄道路線の最短経路 (ホップ数) を推定します。
+Graph の `get_shortest_path` API を使用して、鉄道路線の最短経路 (ホップ数) を推定します。
 
 準備
 ----
