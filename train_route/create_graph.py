@@ -53,8 +53,8 @@ def create_graph(c, join_list):
         c.create_edge(instance_name, s1_node_id, edge_1)
         c.create_edge(instance_name, s2_node_id, edge_2)
 
-    # Comment-out this line if you're running in distributed mode.
-    c.update_index(instance_name)
+        # Comment-out this line if you're running in distributed mode.
+        c.update_index(instance_name)
 
 def add_station(c, name):
     if name in stations:
