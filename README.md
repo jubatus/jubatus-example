@@ -12,7 +12,7 @@ Jubatus Examples
 3. twitter_streaming_lang
    - classifier
    - Python
-   - 分類器を利用した応用です。Twitterのストリーム受け取って、各つぶやきデータの言語を学習・推定します。
+   - 分類器を利用した応用です。Wikipediaのデータを学習し、Twitterのストリームから受け取った、各つぶやきデータの言語を推定します。
 4. malware_classification
    - classifier
    - C++
