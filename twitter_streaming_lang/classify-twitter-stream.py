@@ -51,8 +51,8 @@ class TweetAnalyzer(StreamListener):
         result = self.classifier.classify(instance_name, [d])
 
         if len(result) > 0 and len(result[0]) > 0:
-            # sort the result in order of probability
-            est = sorted(result[0], key=lambda est: est.prob, reverse=True)
+            # sort the result in order of score
+            est = sorted(result[0], key=lambda est: est.score, reverse=True)
 
             print_green(est[0].label, end=" ")
             if est[0].label == self.highlight:
