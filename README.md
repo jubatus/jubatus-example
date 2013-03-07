@@ -9,33 +9,38 @@ Jubatus Examples
    - classifier
    - C++/Python/Ruby/Java
    - 分類器を利用した最も簡単なサンプルです。服装や髪形などの特徴を学習して、性別を推定します。
-3. twitter_streaming_lang
+3. twitter\_streaming\_lang
    - classifier
    - Python
    - 分類器を利用した応用です。Wikipediaのデータを学習し、Twitterのストリームから受け取った、各つぶやきデータの言語を推定します。
-4. malware_classification
+4. twitter\_streaming\_location
+   - classifier
+   - Python
+   - 分類器を利用した応用です。Twitterのストリームから位置情報付きのツイートを学習し、文章がどの地域から発信されたものかを推定します。
+5. malware\_classification
    - classifier
    - C++
    - 分類器を利用した応用です。バイナリの実行を受け取って、マルウェアかどうかを推定します。
-5. npb_similar_player
+6. npb\_similar\_player
    - recommender
    - Python
    - レコメンダーを利用した最も簡単なサンプルです。野球選手のプロフィール情報を学習して、未知のそれぞれの選手と最も類似した特徴の選手を探します。
-6. rent
+7. rent
    - regression
    - Python
    - 回帰を利用した最も簡単なサンプルです。物件情報から、その物件の家賃を予測します。
-7. train_route
+8. train\_route
    - graph
    - Python
    - グラフ解析の特に最短路探索を利用した最も簡単なサンプルです。都内の路線の経路情報を学習して、駅間の最短経路を探索します。
 
-|                            | classifer | recommender | regression | stat | graph | Language     |
-|----------------------------|-----------|-------------|------------|------|-------|--------------|
-| 1. shogun                  | :+1:      |             |            |      |       | Py/Ru        |
-| 2. gender                  | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
-| 3. twitter_streaming_lang  | :+1:      |             |            |      |       | Py           |
-| 4. malware_classification  | :+1:      |             |            |      |       | C++          |
-| 5. npb_similar_player      |           | :+1:        |            |      |       | Py           |
-| 6. rent                    |           |             | :+1:       |      |       | Py           |
-| 7. train_route             |           |             |            |      | :+1:  | Py           |
+|                                     | classifer | recommender | regression | stat | graph | Language     |
+|-------------------------------------|-----------|-------------|------------|------|-------|--------------|
+| 1. shogun                           | :+1:      |             |            |      |       | Py/Ru        |
+| 2. gender                           | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       | Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py           |
+| 5. malware\_classification          | :+1:      |             |            |      |       | C++          |
+| 6. npb\_similar\_player             | :+1:      |             |            |      |       | Py           |
+| 7. rent                             |           |             | :+1:       |      |       | Py           |
+| 8. train\_route                     |           |             |            |      | :+1:  | Py           |
