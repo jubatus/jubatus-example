@@ -72,20 +72,20 @@ class Trainer(StreamListener):
         print detagged_text
 
 class LocationFence(object):
-    def __init__(self, name, latitude1, longitude1, latitude2, longitude2):
+    def __init__(self, name, longitude1, latitude1, longitude2, latitude2):
         self.name = name
-        self.latitude1 = latitude1
         self.longitude1 = longitude1
-        self.latitude2 = latitude2
+        self.latitude1 = latitude1
         self.longitude2 = longitude2
+        self.latitude2 = latitude2
 
-    def is_inside(self, latitude, longitude):
+    def is_inside(self, longitude, latitude):
         return \
-            self.latitude1 <= latitude and latitude <= self.latitude2 and \
-            self.longitude1 <= longitude and longitude <= self.longitude2
+            self.longitude1 <= longitude and longitude <= self.longitude2 and \
+            self.latitude1 <= latitude and latitude <= self.latitude2
 
     def get_coordinates(self):
-        return [self.latitude1, self.longitude1, self.latitude2, self.longitude2]
+        return [self.longitude1, self.latitude1, self.longitude2, self.latitude2]
 
 def remove_hashtags_from_tweet(tweet, hashtags):
     indices = {} # ranges to exclude from the tweet text (begin->end)
