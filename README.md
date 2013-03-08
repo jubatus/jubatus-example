@@ -15,7 +15,7 @@ Jubatus Examples
    - 分類器を利用した応用です。Wikipediaのデータを学習し、Twitterのストリームから受け取った、各つぶやきデータの言語を推定します。
 4. twitter\_streaming\_location
    - classifier
-   - Python
+   - Python/Java
    - 分類器を利用した応用です。Twitterのストリームから位置情報付きのツイートを学習し、文章がどの地域から発信されたものかを推定します。
 5. malware\_classification
    - classifier
@@ -39,7 +39,7 @@ Jubatus Examples
 | 1. shogun                           | :+1:      |             |            |      |       | Py/Ru        |
 | 2. gender                           | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
 | 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       | Py           |
-| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py/Ja        |
 | 5. malware\_classification          | :+1:      |             |            |      |       | C++          |
 | 6. npb\_similar\_player             |           | :+1:        |            |      |       | Py           |
 | 7. rent                             |           |             | :+1:       |      |       | Py           |

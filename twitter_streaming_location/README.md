@@ -3,18 +3,26 @@ Twitter Streaming Classification: Location Estimation
 
 Twitter ストリームに流れるジオタグ(位置情報)を学習し、ユーザの入力した文章がどの場所で発信されたものであるかを推定します。
 
+Python と Java の 2 言語で実装されています。いずれも動作は同等です。
+
 準備
 ----
 
 * Jubatus 0.4.0 以降
   - Jubatus のインストール手順は [Quick Start](http://jubat.us/ja/quickstart.html) を参照してください。
-* Python 2.7 以降
-* Python モジュール: [Jubatus Python クライアント](http://jubat.us/ja/quickstart.html), [tweepy](https://github.com/tweepy/tweepy)
-  - `pip install jubatus tweepy` でインストールすることができます。
 
-* train.py を編集し、あなたの Twitter ID とパスワードを tw\_username, tw\_password に記入してください。
-  - Twitter Streaming API に接続するために使用します。自動的にツイートなどを行うことはありません。
-  - Twitter API の制約により、同一アカウントで複数のクライアントを起動するとエラーが発生することがあります。
+* Python 版
+  - Python 2.7 以降
+  -  Python モジュール: [Jubatus Python クライアント](http://jubat.us/ja/quickstart.html), [tweepy](https://github.com/tweepy/tweepy)
+      - `pip install jubatus tweepy` でインストールすることができます。
+  - Twitter アカウント
+      - train.py を編集し、あなたの Twitter ID とパスワードを tw\_username, tw\_password に記入してください。
+
+* Java 版
+  - Java SE (JDK) 1.5 以降
+  - Maven 2
+  - Twitter アカウント
+      - src/main/java/example/twitterstreaminglocation/LocationTrainerApp.java を編集し、あなたの Twitter ID とパスワードを twitterUserName, twitterPassword に記入してください。
 
 サーバの起動
 ------------
@@ -31,6 +39,13 @@ Twitter ストリームの学習
 学習クライアントを実行すると、Twitter ストリームからツイート情報を取得して学習します (学習したデータが表示されます)。
 Ctrl-C で停止するまで学習を継続します。
 
+* Python 版
+  - `train.py` を実行します。
+* Java 版
+  - `train.sh` を実行します。
+
+実行例を以下に示します。
+
 ```
 $ ./train.py
 ```
@@ -41,7 +56,14 @@ $ ./train.py
 ユーザの入力した文章の分類
 --------------------------
 
-分類クライアントに引数で文章を与えると、その文章がツイートされた場所を推定します。
+分類クライアントに文章を与えると、その文章がツイートされた場所を推定します。
+
+* Python 版
+  - `classify.py` に引数として分類したい文章を引数で与えて実行します。
+* Java 版
+  - `classify.sh` を引数なしで実行し、表示されたプロンプトに分類したい文章を入力します。
+
+実行例を以下に示します。
 
 ```
 $ ./classify.py "ビッグサイトに遊びにきた！"
@@ -58,3 +80,9 @@ Estimated Location for 雪降ってきた:
 ```
 
 学習が十分に行われていない場合は結果が表示できません。
+
+備考
+----
+
+* Twitter アカウントは Twitter Streaming API に接続するために使用します。自動的にツイートなどを行うことはありません。
+* Twitter API の制約により、同一アカウントで複数のクライアントを起動するとエラーが発生することがあります。
