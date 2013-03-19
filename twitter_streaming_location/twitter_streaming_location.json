@@ -1,7 +1,7 @@
 {
   "method": "NHERD",
   "parameter": {
-    "regularization_weight": 0.1
+    "regularization_weight": 0.001
   },
   "converter": {
     "num_filter_types": {
