@@ -8,20 +8,18 @@
 準備
 ====
 
-- Jubauts 0.4.0 + Python クライアントをインストールします。
+- Jubauts 0.4.0 + Ruby クライアントをインストールします。
 
-  - Python クライアントは `pip install jubatus` でインストールできます。
+  - Ruby クライアントは `gem install jubatus` でインストールできます。
 
 
 サーバーの起動
 ==============
 
 jubaregression を起動します。
-
-::
-
+```
  $ jubaregression --configpath rent.json &
-
+```
 
 実行
 ============
