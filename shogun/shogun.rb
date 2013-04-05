@@ -14,7 +14,7 @@ def train(client)
   # prepare training data
   # predict the last ones (that are commented out)
   train_data =
-    [ 
+    [
      ["徳川", Jubatus::Classifier::Datum.new([["name", "家康"]], [])],
      ["徳川", Jubatus::Classifier::Datum.new([["name", "秀忠"]], [])],
      ["徳川", Jubatus::Classifier::Datum.new([["name", "家光"]], [])],
@@ -75,7 +75,7 @@ end
 
 def predict(client)
   # predict the last shogun
-  data = 
+  data =
     [
      Jubatus::Classifier::Datum.new([["name", "慶喜"]], []),
      Jubatus::Classifier::Datum.new([["name", "義昭"]], []),
