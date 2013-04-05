@@ -66,3 +66,4 @@ $ jubaclassifier -f non_split.json &
  [] （←良い結果が得られない
 ```
 
+各***_train.txtファイルはそれぞれWikipediaからの抜粋です。著作権はWikipediaに帰属します。

@@ -37,6 +37,10 @@ Jubatus Examples
    - graph
    - Python
    - グラフ解析の特に最短路探索を利用した最も簡単なサンプルです。都内の路線の経路情報を学習して、駅間の最短経路を探索します。
+10. language\_detection
+   - classifier
+   - Ruby
+   - 分類器を用いた言語推定のデモです。欧米の言語に含まれる単語から言語を推定します。
 
 |                                     | classifer | recommender | regression | stat | graph | Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|--------------|
@@ -49,3 +53,4 @@ Jubatus Examples
 | 7. npb\_similar\_player             |           | :+1:        |            |      |       | Py           |
 | 8. rent                             |           |             | :+1:       |      |       | Py           |
 | 9. train\_route                     |           |             |            |      | :+1:  | Py           |
+|10. language\_detection              | :+1:      |             |            |      |       | Ru           |
