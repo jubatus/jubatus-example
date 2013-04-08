@@ -3,7 +3,7 @@ Jubatus Examples
 
 1. shogun
    - classifier
-   - Python/Ruby
+   - Python/Ruby/Java
    - 分類器を利用した最も簡単なサンプルです。徳川家、足利家、北条家の各将軍の特徴を学習します。未知の将軍の名前を与えて、どの将軍とおもわれるか推定します。
 2. gender
    - classifier
@@ -40,7 +40,7 @@ Jubatus Examples
 
 |                                     | classifer | recommender | regression | stat | graph | Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|--------------|
-| 1. shogun                           | :+1:      |             |            |      |       | Py/Ru        |
+| 1. shogun                           | :+1:      |             |            |      |       | Py/Ru/Ja     |
 | 2. gender                           | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
 | 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       | Py           |
 | 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py/Ja        |
