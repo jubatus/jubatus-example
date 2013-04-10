@@ -12,7 +12,7 @@ file_list=commands.getoutput("ls|grep _train.txt").split("\n")
 pp = pprint.PrettyPrinter()
 
 fds = map(lambda x: [x.replace("_train.txt", ""), open(x, "r")], file_list)
-while fds != "":
+while fds != []:
     [label, fd] = random.choice(fds)
     text = fd.readline()
     if text == "":
