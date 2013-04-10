@@ -46,7 +46,6 @@ def update(recommender)
 			recommender.update_row($name, pname, datum)
 		}
 	}
-
 end
 
 recommender = Jubatus::Recommender::Client::Recommender.new($host, $port)
