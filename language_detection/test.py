@@ -6,6 +6,8 @@ from jubatus.classifier import types
 
 while True:
     buf = raw_input("> ")
+    if buf == "":
+        break
     classifier = client.classifier("127.0.0.1", 9199)
     datum = types.datum([["text", buf.rstrip()]], [])
     result = classifier.classify("", [datum])
@@ -15,4 +17,3 @@ while True:
     result[0].sort(key=lambda x:x.score, reverse=True)
     for res in result[0]:
         print(res.label + " -> " + str(res.score))
-
