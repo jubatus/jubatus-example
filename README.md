@@ -38,14 +38,14 @@ Jubatus Examples
    - Python
    - グラフ解析の特に最短路探索を利用した最も簡単なサンプルです。都内の路線の経路情報を学習して、駅間の最短経路を探索します。
 
-|                                     | classifer | recommender | regression | stat | graph | Language     |
-|-------------------------------------|-----------|-------------|------------|------|-------|--------------|
-| 1. shogun                           | :+1:      |             |            |      |       | Py/Ru/Ja     |
-| 2. gender                           | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
-| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       | Py           |
-| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py/Ja        |
-| 5. malware\_classification          | :+1:      |             |            |      |       | C++          |
-| 6. movielens                        |           | :+1:        |            |      |       | C++/Py       |
-| 7. npb\_similar\_player             |           | :+1:        |            |      |       | Py           |
-| 8. rent                             |           |             | :+1:       |      |       | Py           |
-| 9. train\_route                     |           |             |            |      | :+1:  | Py           |
+|                                     | classifer | recommender | regression | stat | graph | anomaly | Language     |
+|-------------------------------------|-----------|-------------|------------|------|-------|---------|--------------|
+| 1. shogun                           | :+1:      |             |            |      |       |         | Py/Ru/Ja     |
+| 2. gender                           | :+1:      |             |            |      |       |         | C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         | Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         | Py/Ja        |
+| 5. malware\_classification          | :+1:      |             |            |      |       |         | C++          |
+| 6. movielens                        |           | :+1:        |            |      |       |         | C++/Py       |
+| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         | Py           |
+| 8. rent                             |           |             | :+1:       |      |       |         | Py           |
+| 9. train\_route                     |           |             |            |      | :+1:  |         | Py           |
