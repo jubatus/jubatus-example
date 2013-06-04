@@ -14,6 +14,6 @@ while True:
     if len(result[0]) == 0:
         print("nothing")
         continue
-    result[0].sort(key=lambda x:x.score, reverse=True)
+    result[0].sort(key = lambda x:x.score, reverse = True)
     for res in result[0]:
         print(res.label + " -> " + str(res.score))
