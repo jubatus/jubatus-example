@@ -82,7 +82,7 @@ def predict(client):
     for d in data:
         res = client.classify(name, [d])
         # get the predicted shogun name
-        print max(res[0], key = lambda x: x.score).label, d.string_values[0][1]
+        print(max(res[0], key = lambda x: x.score).label, d.string_values[0][1])
 
 if __name__ == '__main__':
     # connect to the jubatus
