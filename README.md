@@ -3,7 +3,7 @@ Jubatus Examples
 
 1. shogun
    - classifier
-   - Python/Ruby
+   - Python/Ruby/Java
    - 分類器を利用した最も簡単なサンプルです。徳川家、足利家、北条家の各将軍の特徴を学習します。未知の将軍の名前を与えて、どの将軍とおもわれるか推定します。
 2. gender
    - classifier
@@ -23,15 +23,15 @@ Jubatus Examples
    - 分類器を利用した応用です。バイナリの実行を受け取って、マルウェアかどうかを推定します。
 6. movielens
    - recommender
-   - C++/Python
+   - C++/Python/Ruby
    - レコメンダーを利用した最も簡単なサンプルです。MovieLens という映画の評価情報公開データを利用して、あるユーザーに対して似ているユーザーを表示します。
 7. npb\_similar\_player
    - recommender
-   - Python
+   - C++/Python/Ruby
    - レコメンダーを利用した最も簡単なサンプルです。野球選手のプロフィール情報を学習して、未知のそれぞれの選手と最も類似した特徴の選手を探します。
 8. rent
    - regression
-   - Python
+   - Python/Ruby
    - 回帰を利用した最も簡単なサンプルです。物件情報から、その物件の家賃を予測します。
 9. train\_route
    - graph
@@ -39,18 +39,23 @@ Jubatus Examples
    - グラフ解析の特に最短路探索を利用した最も簡単なサンプルです。都内の路線の経路情報を学習して、駅間の最短経路を探索します。
 10. language\_detection
    - classifier
-   - Ruby
+   - Python/Ruby
    - 分類器を用いた言語推定のデモです。欧米の言語に含まれる単語から言語を推定します。
+11. trivial\_stat
+   - stat
+   - Python
+   - 統計分析機能を利用した最も簡単なサンプルです。果物の直径・重さ・価格を学習し、フルーツごとにパラメータの合計値や標準偏差などの統計分析を行います。
 
-|                                     | classifer | recommender | regression | stat | graph | Language     |
-|-------------------------------------|-----------|-------------|------------|------|-------|--------------|
-| 1. shogun                           | :+1:      |             |            |      |       | Py/Ru        |
-| 2. gender                           | :+1:      |             |            |      |       | C++/Py/Ru/Ja |
-| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       | Py           |
-| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       | Py/Ja        |
-| 5. malware\_classification          | :+1:      |             |            |      |       | C++          |
-| 6. movielens                        |           | :+1:        |            |      |       | C++/Py       |
-| 7. npb\_similar\_player             |           | :+1:        |            |      |       | Py/Ru        |
-| 8. rent                             |           |             | :+1:       |      |       | Py/Ru        |
-| 9. train\_route                     |           |             |            |      | :+1:  | Py           |
-|10. language\_detection              | :+1:      |             |            |      |       | Py/Ru        |
+|                                     | classifer | recommender | regression | stat | graph | anomaly | Language     |
+|-------------------------------------|-----------|-------------|------------|------|-------|---------|--------------|
+| 1. shogun                           | :+1:      |             |            |      |       |         | Py/Ru/Ja     |
+| 2. gender                           | :+1:      |             |            |      |       |         | C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         | Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         | Py/Ja        |
+| 5. malware\_classification          | :+1:      |             |            |      |       |         | C++          |
+| 6. movielens                        |           | :+1:        |            |      |       |         | C++/Py/Ru    |
+| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         | C++/Py/Ru    |
+| 8. rent                             |           |             | :+1:       |      |       |         | Py/Ru        |
+| 9. train\_route                     |           |             |            |      | :+1:  |         | Py           |
+|10. language\_detection              | :+1:      |             |            |      |       |         | Py/Ru        |
+|11. trivial_stat                     |           |             |            | :+1: |       |         | Py           |
