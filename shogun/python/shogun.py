@@ -5,6 +5,7 @@ host = '127.0.0.1'
 port = 9199
 name = 'test'
 
+import sys
 import json
 import random
 
@@ -82,7 +83,10 @@ def predict(client):
     for d in data:
         res = client.classify(name, [d])
         # get the predicted shogun name
-        print(max(res[0], key = lambda x: x.score).label, d.string_values[0][1])
+        sys.stdout.write(max(res[0], key = lambda x: x.score).label)
+        sys.stdout.write(' ')
+        sys.stdout.write(d.string_values[0][1])
+        sys.stdout.write('\n')
 
 if __name__ == '__main__':
     # connect to the jubatus
