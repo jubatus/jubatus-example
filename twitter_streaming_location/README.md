@@ -11,18 +11,20 @@ Python と Java の 2 言語で実装されています。いずれも動作は�
 * Jubatus 0.4.0 以降
   - Jubatus のインストール手順は [Quick Start](http://jubat.us/ja/quickstart.html) を参照してください。
 
+* Twitter API を使用するため、[Twitter Developers サイト](https://dev.twitter.com/apps/new) でアプリケーションを登録し、Consumer Key/Secret, Access Key/Secret を入手してください。
+
 * Python 版
   - Python 2.7 以降
   -  Python モジュール: [Jubatus Python クライアント](http://jubat.us/ja/quickstart.html), [tweepy](https://github.com/tweepy/tweepy)
       - `pip install jubatus tweepy` でインストールすることができます。
-  - Twitter アカウント
-      - train.py を編集し、あなたの Twitter ID とパスワードを tw\_username, tw\_password に記入してください。
+  - Twitter API Key
+      - train.py を編集し、上記の Consumer Key/Secret, Access Key/Secret 入力してください。
 
 * Java 版
   - Java SE (JDK) 1.5 以降
   - Maven 2
-  - Twitter アカウント
-      - src/main/java/example/twitterstreaminglocation/LocationTrainerApp.java を編集し、あなたの Twitter ID とパスワードを twitterUserName, twitterPassword に記入してください。
+  - Twitter API Key
+      - src/main/java/example/twitterstreaminglocation/LocationTrainerApp.java を編集し、上記の Consumer Key/Secret, Access Key/Secret 入力してください。
 
 サーバの起動
 ------------
@@ -80,9 +82,3 @@ Estimated Location for 雪降ってきた:
 ```
 
 学習が十分に行われていない場合は結果が表示できません。
-
-備考
-----
-
-* Twitter アカウントは Twitter Streaming API に接続するために使用します。自動的にツイートなどを行うことはありません。
-* Twitter API の制約により、同一アカウントで複数のクライアントを起動するとエラーが発生することがあります。

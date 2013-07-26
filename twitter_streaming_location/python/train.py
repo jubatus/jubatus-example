@@ -7,13 +7,21 @@ import re
 
 from tweepy.streaming import StreamListener, Stream
 from tweepy.auth import BasicAuthHandler
+from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
 from jubatus.classifier import types
 
-# Twitter Configuration (fill in your account information here)
-tw_username = ""
-tw_password = ""
+def oauth():
+    # Fill in your keys here:
+    consumer_key = 'XXXXXXXXXXXXXXXXXXXX'
+    consumer_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    access_key = 'XXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    access_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+    auth = OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_key, access_secret)
+    return auth
 
 # Jubatus Configuration
 host = "127.0.0.1"
@@ -109,7 +117,7 @@ def train_tweets():
     for l in locations:
         request_coordinates += l.get_coordinates()
 
-    stream = Stream(BasicAuthHandler(tw_username, tw_password), Trainer(locations), secure=True)
+    stream = Stream(oauth(), Trainer(locations), secure=True)
     stream.filter(locations=request_coordinates)
 
 if __name__ == '__main__':
