@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require "jubatus/recommender/client"
 require "jubatus/recommender/types"
 require "pp"

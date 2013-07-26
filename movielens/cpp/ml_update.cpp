@@ -15,10 +15,10 @@ using namespace pfi::lang;
 const string NAME = "recommender_ml";
 
 int main(int argc, char* argv[]){
-  
-  jubatus::recommender::client::recommender r("localhost", 9199, 1.0);
 
-  ifstream ifs("./dat/ml-100k/u.data");
+  jubatus::recommender::client::recommender r("localhost", 9199, 5);
+
+  ifstream ifs("../dat/ml-100k/u.data");
   if (!ifs){
     throw string ("cannot open data file");
   }

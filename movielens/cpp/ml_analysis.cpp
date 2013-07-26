@@ -12,7 +12,7 @@ const string NAME = "recommender_ml";
 
 int main(int argc, char* argv[]){
 
-  jubatus::recommender::client::recommender r("localhost", 9199, 1.0);
+  jubatus::recommender::client::recommender r("localhost", 9199, 5);
 
   for (int i = 0 ; i< 943 ; i++)
   {
