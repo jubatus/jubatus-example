@@ -24,7 +24,7 @@ Python と Java の 2 言語で実装されています。いずれも動作は�
   - Java SE (JDK) 1.5 以降
   - Maven 2
   - Twitter API Key
-      - src/main/java/example/twitterstreaminglocation/LocationTrainerApp.java を編集し、上記の Consumer Key/Secret, Access Key/Secret 入力してください。
+      - twitter4j.properties を編集し、上記の Consumer Key/Secret, Access Key/Secret 入力してください。
 
 サーバの起動
 ------------

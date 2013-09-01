@@ -19,16 +19,13 @@ import twitter4j.Status;
 import twitter4j.StatusAdapter;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
-import twitter4j.auth.BasicAuthorization;
-
+import twitter4j.auth.OAuthAuthorization;
+import twitter4j.conf.Configuration;
+import twitter4j.conf.ConfigurationContext;
 import us.jubat.classifier.ClassifierClient;
 import us.jubat.classifier.Datum;
 
 public class LocationTrainerApp {
-	// Twitter Configuration (fill in your account information here)
-	private String twitterUserName = "";
-	private String twitterPassword = "";
-
 	// Jubatus Configuration
 	private String host = "127.0.0.1";
 	private int port = 9199;
@@ -76,6 +73,12 @@ public class LocationTrainerApp {
 			client.train(instanceName, list(newTupleStringDatum(label, d)));
 
 			System.out.println(label + " " + detaggedText);
+		}
+
+		@Override
+		public void onException(Exception ex) {
+			ex.printStackTrace();
+			System.exit(1);
 		}
 	}
 
@@ -147,9 +150,9 @@ public class LocationTrainerApp {
 			requestCoordinates.addAll(Arrays.asList(l.getCoordinates()));
 		}
 
+		Configuration conf = ConfigurationContext.getInstance();
 		TwitterStream stream = new TwitterStreamFactory()
-				.getInstance(new BasicAuthorization(twitterUserName,
-						twitterPassword));
+				.getInstance(new OAuthAuthorization(conf));
 		stream.addListener(new Trainer(locations));
 		FilterQuery filter = new FilterQuery();
 		filter.locations(requestCoordinates.toArray(new double[][] {}));
@@ -158,6 +161,5 @@ public class LocationTrainerApp {
 
 	public static void main(String[] args) throws Exception {
 		new LocationTrainerApp().trainTweets();
-		System.exit(0);
 	}
 }
