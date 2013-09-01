@@ -4,6 +4,7 @@
 import sys
 import json
 import re
+import httplib
 
 from tweepy.streaming import StreamListener, Stream
 from tweepy.auth import BasicAuthHandler
@@ -78,6 +79,16 @@ class Trainer(StreamListener):
         # Print trained tweet
         print_green(loc.name, ' ')
         print detagged_text
+
+    def on_error(self, status_code):
+        if status_code in httplib.responses:
+            status_msg = httplib.responses[status_code]
+        else:
+            status_msg = str(status_code)
+        print "ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg)
+
+        # return False to stop on first error (do not retry)
+        return False
 
 class LocationFence(object):
     def __init__(self, name, longitude1, latitude1, longitude2, latitude2):
