@@ -16,11 +16,12 @@ loop do
     Readline.readline("#{s} -> ", true)
   }
   cli = Jubatus::Classifier::Client::Classifier.new "127.0.0.1", 9199
-  data = Jubatus::Classifier::Datum.new [["hair", param[0]],
-                                          ["tops", param[1]],
-                                          ["bottom", param[2]]],
-                                        [["height", param[3].to_f]]
-  result = cli.classify(NAME, [data])[0].sort{|a,b| b[1]<=>a[1]}[0][0]
+  data = Jubatus::Common::Datum.new {
+    "hair" => param[0],
+    "tops" => param[1],
+    "bottom" => param[2],
+    "height" => param[3].to_f }
+  result = cli.classify(NAME, [data])[0].sort{|a,b| b.score<=>a.score}[0].label
   puts "gender would be <#{result}>"
   puts ""
 end
