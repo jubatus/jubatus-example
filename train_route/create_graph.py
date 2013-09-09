@@ -50,18 +50,18 @@ def create_graph(c, join_list):
         # Create bi-directional edge between two nodes.
         edge_1 = types.edge({}, s1_node_id, s2_node_id)
         edge_2 = types.edge({}, s2_node_id, s1_node_id)
-        c.create_edge(instance_name, s1_node_id, edge_1)
-        c.create_edge(instance_name, s2_node_id, edge_2)
+        c.create_edge(s1_node_id, edge_1)
+        c.create_edge(s2_node_id, edge_2)
 
         # Comment-out this line if you're running in distributed mode.
-        c.update_index(instance_name)
+        c.update_index()
 
 def add_station(c, name):
     if name in stations:
         node_id = stations[name]
     else:
-        node_id = c.create_node(instance_name)
-        c.update_node(instance_name, node_id, {'name': name})
+        node_id = c.create_node()
+        c.update_node(node_id, {'name': name})
         stations[name] = node_id
     return node_id
 
@@ -71,11 +71,11 @@ def print_stations():
 
 if __name__ == '__main__':
     # Create jubagraph client.
-    c = client.graph(host, port)
+    c = client.graph(host, port, instance_name)
 
     # Prepare query.
     pq = types.preset_query([], [])
-    c.add_shortest_path_query(instance_name, pq)
+    c.add_shortest_path_query(pq)
 
     # Register stations in each line.
     # Do not add too much lines to prevent causing heavy load to the API server.
