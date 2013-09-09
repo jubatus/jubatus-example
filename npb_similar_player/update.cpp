@@ -16,7 +16,7 @@ const string NAME = "recommender_ml";
 
 int main(int argc, char* argv[]){
 
-    jubatus::recommender::client::recommender r("localhost", 9199, 1.0);
+    jubatus::recommender::client::recommender r("localhost", 9199, 1.0, NAME);
 
     ifstream ifs("./dat/baseball.csv");
     if (!ifs) {
@@ -26,10 +26,10 @@ int main(int argc, char* argv[]){
     string pname, team, bave, games, pa, atbat, hit, homerun,
         runsbat, stolen, bob, hbp, strikeout, sacrifice,
         dp, slg, obp, ops, rc27, xr27;
-    datum d;
 
     string temp_string;
     while ((ifs >> temp_string) !=0) {
+        datum d;
         replace(temp_string.begin(), temp_string.end(), ',', ' ');
         istringstream iss(temp_string);
         iss >> pname >> team >> bave >> games >> pa >> atbat
@@ -37,30 +37,27 @@ int main(int argc, char* argv[]){
             >> hbp >> strikeout >> sacrifice >> dp >> slg
             >> obp >> ops >> rc27 >> xr27;
 
-        d.string_values.clear();
-        d.num_values.clear();
+        d.add_string("チーム", team);
+        d.add_number("打率", pfi::lang::lexical_cast<float>(bave));
+        d.add_number("試合数", pfi::lang::lexical_cast<float>(games));
+        d.add_number("打席", pfi::lang::lexical_cast<float>(pa));
+        d.add_number("打数", pfi::lang::lexical_cast<float>(atbat));
+        d.add_number("安打", pfi::lang::lexical_cast<float>(hit));
+        d.add_number("本塁打", pfi::lang::lexical_cast<float>(homerun));
+        d.add_number("打点", pfi::lang::lexical_cast<float>(runsbat));
+        d.add_number("盗塁", pfi::lang::lexical_cast<float>(stolen));
+        d.add_number("四球", pfi::lang::lexical_cast<float>(bob));
+        d.add_number("死球", pfi::lang::lexical_cast<float>(hbp));
+        d.add_number("三振", pfi::lang::lexical_cast<float>(strikeout));
+        d.add_number("犠打", pfi::lang::lexical_cast<float>(sacrifice));
+        d.add_number("併殺打", pfi::lang::lexical_cast<float>(dp));
+        d.add_number("長打率", pfi::lang::lexical_cast<float>(slg));
+        d.add_number("出塁率", pfi::lang::lexical_cast<float>(obp));
+        d.add_number("OPS", pfi::lang::lexical_cast<float>(ops));
+        d.add_number("RC27", pfi::lang::lexical_cast<float>(rc27));
+        d.add_number("XR27", pfi::lang::lexical_cast<float>(xr27));
 
-        d.string_values.push_back(make_pair("チーム", team));
-        d.num_values.push_back(make_pair("打率", pfi::lang::lexical_cast<float>(bave)));
-        d.num_values.push_back(make_pair("試合数", pfi::lang::lexical_cast<float>(games)));
-        d.num_values.push_back(make_pair("打席", pfi::lang::lexical_cast<float>(pa)));
-        d.num_values.push_back(make_pair("打数", pfi::lang::lexical_cast<float>(atbat)));
-        d.num_values.push_back(make_pair("安打", pfi::lang::lexical_cast<float>(hit)));
-        d.num_values.push_back(make_pair("本塁打", pfi::lang::lexical_cast<float>(homerun)));
-        d.num_values.push_back(make_pair("打点", pfi::lang::lexical_cast<float>(runsbat)));
-        d.num_values.push_back(make_pair("盗塁", pfi::lang::lexical_cast<float>(stolen)));
-        d.num_values.push_back(make_pair("四球", pfi::lang::lexical_cast<float>(bob)));
-        d.num_values.push_back(make_pair("死球", pfi::lang::lexical_cast<float>(hbp)));
-        d.num_values.push_back(make_pair("三振", pfi::lang::lexical_cast<float>(strikeout)));
-        d.num_values.push_back(make_pair("犠打", pfi::lang::lexical_cast<float>(sacrifice)));
-        d.num_values.push_back(make_pair("併殺打", pfi::lang::lexical_cast<float>(dp)));
-        d.num_values.push_back(make_pair("長打率", pfi::lang::lexical_cast<float>(slg)));
-        d.num_values.push_back(make_pair("出塁率", pfi::lang::lexical_cast<float>(obp)));
-        d.num_values.push_back(make_pair("OPS", pfi::lang::lexical_cast<float>(ops)));
-        d.num_values.push_back(make_pair("RC27", pfi::lang::lexical_cast<float>(rc27)));
-        d.num_values.push_back(make_pair("XR27", pfi::lang::lexical_cast<float>(xr27)));
-
-        r.update_row(NAME, pname, d);
+        r.update_row(pname, d);
     }
 
     return 0;
