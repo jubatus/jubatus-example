@@ -1,6 +1,7 @@
 import argparse
 import yaml
 
+from jubatus.common import datum
 from jubatus.regression.client import regression
 from jubatus.regression.types import *
 from jubahomes.version import get_version
@@ -31,7 +32,7 @@ def parse_options():
 def main():
   args = parse_options()
 
-  client = regression('127.0.0.1', 9199)
+  client = regression('127.0.0.1', 9199, '')
 
   # train
   num = 0
@@ -45,20 +46,16 @@ def main():
         num += 1
 
         rent, distance, space, age, stair, aspect = map(str.strip, data.strip().split(','))
-        string_values = [
-          ['aspect', aspect]
-        ]
-        num_values = [
-          ['distance', float(distance)],
-          ['space', float(space)],
-          ['age', float(age)],
-          ['stair', float(stair)]
-        ]
-        d = datum(string_values, num_values)
+        d = datum({
+            'aspect': aspect,
+            'distance': float(distance),
+            'space': float(space),
+            'age': float(age),
+            'stair': float(stair) })
         train_data = [[float(rent), d]]
 
         # train
-        client.train('', train_data)
+        client.train(train_data)
 
     # print train number
     print 'train ...', num
@@ -66,18 +63,15 @@ def main():
   # anaylze
   with open(args.analyzedata, 'r') as analyzedata:
     myhome = yaml.load(analyzedata)
-    string_values = [
-      ['aspect', str(myhome['aspect'])]
-    ]
-    num_values = [
-      ['distance', float(myhome['distance'])],
-      ['space', float(myhome['space'])],
-      ['age', float(myhome['age'])],
-      ['stair', float(myhome['stair'])]
-    ]
-    d = datum(string_values, num_values)
+    d = datum({
+        'aspect': str(myhome['aspect']),
+        'distance': float(myhome['distance']),
+        'space': float(myhome['space']),
+        'age': float(myhome['age']),
+        'stair': float(myhome['stair'])
+        })
     analyze_data = [d]
-    result = client.estimate('', analyze_data)
+    result = client.estimate(analyze_data)
 
     print 'rent ....', round(result[0], 1)
 
