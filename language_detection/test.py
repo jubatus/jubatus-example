@@ -8,9 +8,9 @@ while True:
     buf = raw_input("> ")
     if buf == "":
         break
-    classifier = client.classifier("127.0.0.1", 9199)
-    datum = types.datum([["text", buf.rstrip()]], [])
-    result = classifier.classify("", [datum])
+    classifier = client.classifier("127.0.0.1", 9199, "")
+    datum = types.datum({"text": buf.rstrip()})
+    result = classifier.classify([datum])
     if len(result[0]) == 0:
         print("nothing")
         continue

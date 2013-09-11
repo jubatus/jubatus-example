@@ -6,7 +6,7 @@ from jubatus.classifier import client
 from jubatus.classifier import types
 
 NAME = "a"
-classifier = client.classifier("127.0.0.1", 9199)
+classifier = client.classifier("127.0.0.1", 9199, NAME)
 
 file_list = subprocess.check_output(["ls | grep _train.txt"],
                                     shell = True).split('\n')[0:-1]
@@ -20,6 +20,6 @@ while fds != []:
         print("finished train of label %s \n" % (label))
         continue
     text_strip = text.rstrip()
-    datum = types.datum([["text", text_strip]], [])
+    datum = types.datum({"text": text_strip})
     print("train %s : %s ..." %(label, text_strip))
-    classifier.train(NAME, [(label, datum)])
+    classifier.train([(label, datum)])
