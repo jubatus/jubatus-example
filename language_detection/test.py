@@ -9,7 +9,7 @@ while True:
     if buf == "":
         break
     classifier = client.classifier("127.0.0.1", 9199, "")
-    datum = types.datum({"text": buf.rstrip()})
+    datum = types.Datum({"text": buf.rstrip()})
     result = classifier.classify([datum])
     if len(result[0]) == 0:
         print("nothing")

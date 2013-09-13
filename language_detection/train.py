@@ -20,6 +20,6 @@ while fds != []:
         print("finished train of label %s \n" % (label))
         continue
     text_strip = text.rstrip()
-    datum = types.datum({"text": text_strip})
+    datum = types.Datum({"text": text_strip})
     print("train %s : %s ..." %(label, text_strip))
     classifier.train([(label, datum)])

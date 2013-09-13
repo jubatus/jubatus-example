@@ -1,7 +1,7 @@
 import argparse
 import yaml
 
-from jubatus.common import datum
+from jubatus.common import Datum
 from jubatus.regression.client import regression
 from jubatus.regression.types import *
 from jubahomes.version import get_version
@@ -46,7 +46,7 @@ def main():
         num += 1
 
         rent, distance, space, age, stair, aspect = map(str.strip, data.strip().split(','))
-        d = datum({
+        d = Datum({
             'aspect': aspect,
             'distance': float(distance),
             'space': float(space),
@@ -63,7 +63,7 @@ def main():
   # anaylze
   with open(args.analyzedata, 'r') as analyzedata:
     myhome = yaml.load(analyzedata)
-    d = datum({
+    d = Datum({
         'aspect': str(myhome['aspect']),
         'distance': float(myhome['distance']),
         'space': float(myhome['space']),

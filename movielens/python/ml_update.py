@@ -14,7 +14,7 @@ if __name__ == '__main__':
     n = 0
     for line in open('../dat/ml-100k/u.data'):
         userid, movieid, rating, mtime = line[:-1].split('\t')
-        datum = types.datum({str(movieid): float(rating)})
+        datum = types.Datum({str(movieid): float(rating)})
         if (n % 1000 == 0):
             print n
         recommender.update_row(userid, datum)

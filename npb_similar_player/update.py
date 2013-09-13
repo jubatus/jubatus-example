@@ -4,7 +4,7 @@
 import sys, json
 from jubatus.recommender import client
 from jubatus.recommender import types
-from jubatus.common import datum
+from jubatus.common import Datum
 
 NAME = "recommender_baseball";
 
@@ -14,7 +14,7 @@ if __name__ == '__main__':
 
     for line in open('dat/baseball.csv'):
         pname, team, bave, games, pa, atbat, hit, homerun, runsbat, stolen, bob, hbp, strikeout, sacrifice, dp, slg, obp, ops, rc27, xr27 = line[:-1].split(',')
-        d = datum({
+        d = Datum({
           "チーム": team,
           "打率": float(bave),
           "試合数": float(games),

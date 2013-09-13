@@ -70,7 +70,7 @@ class Trainer(StreamListener):
         detagged_text = remove_hashtags_from_tweet(status.text, hashtags)
 
         # Create datum for Jubatus
-        d = types.datum([], [])
+        d = types.Datum([], [])
         d.string_values = [('text', detagged_text)]
 
         # Send training data to Jubatus

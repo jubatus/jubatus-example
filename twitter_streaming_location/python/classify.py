@@ -15,7 +15,7 @@ def estimate_location_for(text):
     classifier = client.classifier(host, port)
 
     # Create datum for Jubatus
-    d = types.datum([], [])
+    d = types.Datum([], [])
     d.string_values = [('text', text)]
 
     # Send estimation query to Jubatus

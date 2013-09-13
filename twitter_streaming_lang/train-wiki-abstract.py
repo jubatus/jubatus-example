@@ -31,7 +31,7 @@ class Handler(xml.sax.handler.ContentHandler):
         if not self.read:
             return
 
-        d = types.datum([], [])
+        d = types.Datum([], [])
         d.string_values = [
             ['text', content],
         ]

@@ -48,8 +48,8 @@ def create_graph(c, join_list):
         s2_node_id = add_station(c, join.station2)
 
         # Create bi-directional edge between two nodes.
-        edge_1 = types.edge({}, s1_node_id, s2_node_id)
-        edge_2 = types.edge({}, s2_node_id, s1_node_id)
+        edge_1 = types.Edge({}, s1_node_id, s2_node_id)
+        edge_2 = types.Edge({}, s2_node_id, s1_node_id)
         c.create_edge(s1_node_id, edge_1)
         c.create_edge(s2_node_id, edge_2)
 
@@ -71,10 +71,10 @@ def print_stations():
 
 if __name__ == '__main__':
     # Create jubagraph client.
-    c = client.graph(host, port, instance_name)
+    c = client.Graph(host, port, instance_name)
 
     # Prepare query.
-    pq = types.preset_query([], [])
+    pq = types.PresetQuery([], [])
     c.add_shortest_path_query(pq)
 
     # Register stations in each line.

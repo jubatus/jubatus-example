@@ -45,7 +45,7 @@ class TweetAnalyzer(StreamListener):
         if not hasattr(status, 'text'):
             return
 
-        d = types.datum([], []);
+        d = types.Datum([], []);
         d.string_values = [
             ['text', status.text],
         ]
