@@ -15,7 +15,7 @@ from jubatus.common import Datum
 def train(client):
     # prepare training data
     # predict the last ones (that are commented out)
-    train_data = [ 
+    train_data = [
         (u'徳川', Datum({'name': u'家康'})),
         (u'徳川', Datum({'name': u'秀忠'})),
         (u'徳川', Datum({'name': u'家光'})),
@@ -65,7 +65,7 @@ def train(client):
         (u'北条', Datum({'name': u'高時'})),
         (u'北条', Datum({'name': u'貞顕'})),
         # (u'北条', Datum({'name': u'守時'})),
-        ]
+    ]
 
     # training data must be shuffled on online learning!
     random.shuffle(train_data)
@@ -79,7 +79,7 @@ def predict(client):
         Datum({'name': u'慶喜'}),
         Datum({'name': u'義昭'}),
         Datum({'name': u'守時'}),
-        ]
+    ]
     for d in data:
         res = client.classify([d])
         # get the predicted shogun name

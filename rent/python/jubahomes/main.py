@@ -2,7 +2,7 @@ import argparse
 import yaml
 
 from jubatus.common import Datum
-from jubatus.regression.client import regression
+from jubatus.regression.client import Regression
 from jubatus.regression.types import *
 from jubahomes.version import get_version
 
@@ -32,7 +32,7 @@ def parse_options():
 def main():
   args = parse_options()
 
-  client = regression('127.0.0.1', 9199, '')
+  client = Regression('127.0.0.1', 9199, '')
 
   # train
   num = 0
