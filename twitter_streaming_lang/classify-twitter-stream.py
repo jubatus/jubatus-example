@@ -9,6 +9,7 @@ from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
 from jubatus.classifier import types
+from jubatus.common import Datum
 
 host = "127.0.0.1"
 port = 9199
@@ -45,7 +46,7 @@ class TweetAnalyzer(StreamListener):
         if not hasattr(status, 'text'):
             return
 
-        d = types.Datum({'text': status.text});
+        d = Datum({'text': status.text});
         result = self.classifier.classify([d])
 
         if len(result) > 0 and len(result[0]) > 0:
