@@ -9,6 +9,7 @@ from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
 from jubatus.classifier import types
+from jubatus.common import Datum
 
 host = "127.0.0.1"
 port = 9199
@@ -35,7 +36,7 @@ def print_green(msg, end="\n"):
     print_color(32, msg, end)
 
 class TweetAnalyzer(StreamListener):
-    classifier = client.classifier(host, port)
+    classifier = client.Classifier(host, port, instance_name)
 
     def __init__(self, highlight):
         super(TweetAnalyzer, self).__init__()
@@ -45,11 +46,8 @@ class TweetAnalyzer(StreamListener):
         if not hasattr(status, 'text'):
             return
 
-        d = types.Datum([], []);
-        d.string_values = [
-            ['text', status.text],
-        ]
-        result = self.classifier.classify(instance_name, [d])
+        d = Datum({'text': status.text});
+        result = self.classifier.classify([d])
 
         if len(result) > 0 and len(result[0]) > 0:
             # sort the result in order of score

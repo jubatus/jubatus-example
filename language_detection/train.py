@@ -6,7 +6,7 @@ from jubatus.classifier import client
 from jubatus.classifier import types
 
 NAME = "a"
-classifier = client.classifier("127.0.0.1", 9199, NAME)
+classifier = client.Classifier("127.0.0.1", 9199, NAME)
 
 file_list = subprocess.check_output(["ls | grep _train.txt"],
                                     shell = True).split('\n')[0:-1]

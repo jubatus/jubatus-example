@@ -12,14 +12,13 @@ port = 9199
 instance_name = "" # required only when using distributed mode
 
 def estimate_location_for(text):
-    classifier = client.classifier(host, port)
+    classifier = client.Classifier(host, port, instance_name)
 
     # Create datum for Jubatus
-    d = types.Datum([], [])
-    d.string_values = [('text', text)]
+    d = types.Datum({'text': text})
 
     # Send estimation query to Jubatus
-    result = classifier.classify(instance_name, [d])
+    result = classifier.classify([d])
 
     if len(result[0]) > 0:
         # Sort results by score

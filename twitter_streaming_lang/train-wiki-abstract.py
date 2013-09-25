@@ -7,6 +7,7 @@ import xml.sax, xml.sax.handler
 
 from jubatus.classifier import client
 from jubatus.classifier import types
+from jubatus.common import Datum
 
 host = "127.0.0.1"
 port = 9199
@@ -31,17 +32,14 @@ class Handler(xml.sax.handler.ContentHandler):
         if not self.read:
             return
 
-        d = types.Datum([], [])
-        d.string_values = [
-            ['text', content],
-        ]
-        self.classifier.train(instance_name, [[self.label, d]])
+        d = Datum({'text': content})
+        self.classifier.train([[self.label, d]])
         self.count += 1
         if (self.count % 1000 == 0):
             print "Training(%s): %d ..." % (self.label, self.count)
 
 def train_wikipedia_abstract(label, xmlfile):
-    classifier = client.classifier(host, port)
+    classifier = client.Classifier(host, port, instance_name)
 
     parser = xml.sax.make_parser()
     parser.setContentHandler(Handler(classifier, label))

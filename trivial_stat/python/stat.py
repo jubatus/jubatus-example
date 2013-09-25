@@ -10,7 +10,7 @@ NAME = "stat_tri";
 if __name__ == '__main__':
 
   # 1. Jubatus Serverへの接続設定
-  stat = client.stat("127.0.0.1", 9199, NAME)
+  stat = client.Stat("127.0.0.1", 9199, NAME)
 
   # 2. 学習用データの準備
   for line in open('../dat/fruit.csv'):

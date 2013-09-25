@@ -39,7 +39,7 @@ def print_green(msg, end="\n"):
     print_color(32, msg, end)
 
 class Trainer(StreamListener):
-    classifier = client.classifier(host, port)
+    classifier = client.Classifier(host, port, instance_name)
 
     def __init__(self, locations):
         super(Trainer, self).__init__()
@@ -70,11 +70,10 @@ class Trainer(StreamListener):
         detagged_text = remove_hashtags_from_tweet(status.text, hashtags)
 
         # Create datum for Jubatus
-        d = types.Datum([], [])
-        d.string_values = [('text', detagged_text)]
+        d = types.Datum({'text': detagged_text})
 
         # Send training data to Jubatus
-        self.classifier.train(instance_name, [(loc.name, d)])
+        self.classifier.train([(loc.name, d)])
 
         # Print trained tweet
         print_green(loc.name, ' ')
