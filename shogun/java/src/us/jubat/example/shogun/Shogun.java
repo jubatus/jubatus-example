@@ -8,19 +8,16 @@ import java.util.List;
 import java.util.Random;
 
 import us.jubat.classifier.ClassifierClient;
-import us.jubat.classifier.Datum;
 import us.jubat.classifier.EstimateResult;
-import us.jubat.classifier.TupleStringDatum;
-import us.jubat.classifier.TupleStringString;
+import us.jubat.classifier.LabeledDatum;
+import us.jubat.common.Datum;
 
 public class Shogun {
 	private final ClassifierClient client;
-	private final String name;
 	private final Random random;
 
-	public Shogun(ClassifierClient client, String name) {
+	public Shogun(ClassifierClient client) {
 		this.client = client;
-		this.name = name;
 		this.random = new Random(0);
 	}
 
@@ -31,24 +28,15 @@ public class Shogun {
 	 * @return
 	 */
 	private static Datum makeDatum(String name) {
-		Datum datum = new Datum();
-		datum.num_values = Collections.EMPTY_LIST;
-		TupleStringString t = new TupleStringString();
-		t.first = "name";
-		t.second = name;
-		datum.string_values = Arrays.asList(t);
-		return datum;
+		return new Datum().addString("name", name);
 	}
 
-	private static TupleStringDatum makeTrain(String tag, String name) {
-		TupleStringDatum pair = new TupleStringDatum();
-		pair.first = tag;
-		pair.second = makeDatum(name);
-		return pair;
+	private static LabeledDatum makeTrain(String tag, String name) {
+		return new LabeledDatum(tag, makeDatum(name));
 	}
 
 	private void train() {
-		TupleStringDatum[] trainData = {
+		LabeledDatum[] trainData = {
 				makeTrain("徳川", "家康"),
 				makeTrain("徳川", "秀忠"),
 				makeTrain("徳川", "家光"),
@@ -93,12 +81,12 @@ public class Shogun {
 		};
 		// prepare training data
 		// predict the last ones (that are commented out)
-		List<TupleStringDatum> t = new ArrayList<TupleStringDatum>(
+		List<LabeledDatum> t = new ArrayList<LabeledDatum>(
 				Arrays.asList(trainData));
 		Collections.shuffle(t, random);
 
 		// run train
-		client.train(name, t);
+		client.train(t);
 	}
 
 	private static EstimateResult findBestResult(List<EstimateResult> res) {
@@ -115,18 +103,18 @@ public class Shogun {
 		// predict the last shogun
 		Datum[] data = { makeDatum("慶喜"), makeDatum("義昭"), makeDatum("守時"), };
 		for (Datum datum : data) {
-			List<List<EstimateResult>> res = client.classify(name,
+			List<List<EstimateResult>> res = client.classify(
 					Arrays.asList(datum));
 			// get the predicted shogun name
 			System.out.println(findBestResult(res.get(0)).label
-					+ datum.string_values.get(0).second);
+					+ datum.stringValues.get(0).value);
 		}
 	}
 
 	public static void main(String[] args) {
 		try {
-			ClassifierClient client = new ClassifierClient("127.0.0.1", 9199, 1);
-			Shogun s = new Shogun(client, "test");
+			ClassifierClient client = new ClassifierClient("127.0.0.1", 9199, "test", 1);
+			Shogun s = new Shogun(client);
 			s.train();
 			s.predict();
 		} catch (Exception e) {

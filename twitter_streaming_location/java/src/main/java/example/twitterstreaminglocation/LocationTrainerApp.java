@@ -1,9 +1,6 @@
 package example.twitterstreaminglocation;
 
 import static example.twitterstreaminglocation.JubatusClassifierHelper.list;
-import static example.twitterstreaminglocation.JubatusClassifierHelper.newDatum;
-import static example.twitterstreaminglocation.JubatusClassifierHelper.newTupleStringDatum;
-import static example.twitterstreaminglocation.JubatusClassifierHelper.newTupleStringString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +20,8 @@ import twitter4j.auth.OAuthAuthorization;
 import twitter4j.conf.Configuration;
 import twitter4j.conf.ConfigurationContext;
 import us.jubat.classifier.ClassifierClient;
-import us.jubat.classifier.Datum;
+import us.jubat.classifier.LabeledDatum;
+import us.jubat.common.Datum;
 
 public class LocationTrainerApp {
 	// Jubatus Configuration
@@ -37,7 +35,7 @@ public class LocationTrainerApp {
 		private final LocationFence[] locations;
 
 		public Trainer(LocationFence[] locations) throws Exception {
-			client = new ClassifierClient(host, port, 10);
+			client = new ClassifierClient(host, port, instanceName, 10);
 			this.locations = locations;
 		}
 
@@ -65,12 +63,11 @@ public class LocationTrainerApp {
 					status.getHashtagEntities());
 
 			// Create datum for Jubatus
-			Datum d = newDatum();
-			d.string_values.add(newTupleStringString("text", detaggedText));
+			Datum d = new Datum().addString("text", detaggedText);
 
 			// Send training data to Jubatus
 			String label = loc.getName();
-			client.train(instanceName, list(newTupleStringDatum(label, d)));
+			client.train(Arrays.asList(new LabeledDatum(label, d)));
 
 			System.out.println(label + " " + detaggedText);
 		}

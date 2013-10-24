@@ -8,30 +8,28 @@
 #include <pficommon/lang/util.h>
 
 using namespace std;
-using namespace jubatus;
-using namespace jubatus::recommender;
-using namespace pfi::lang;
+using jubatus::client::common::datum;
+using jubatus::recommender::client::recommender;
 
 const string NAME = "recommender_ml";
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
 
-  jubatus::recommender::client::recommender r("localhost", 9199, 5);
+  jubatus::recommender::client::recommender r("localhost", 9199, NAME, 5);
 
   ifstream ifs("../dat/ml-100k/u.data");
-  if (!ifs){
-    throw string ("cannot open data file");
+  if (!ifs) {
+    throw string("cannot open data file");
   }
 
   string userid, movieid, rating, mtime;
-  datum d;
   int n = 0;
-  while((ifs >> userid >> movieid >> rating >> mtime)!=0){
-    d.num_values.clear();
+  while ((ifs >> userid >> movieid >> rating >> mtime) != 0) {
+    datum d;
     if (n % 1000 == 0)
        cout << n << endl;
-    d.num_values.push_back(make_pair(movieid, pfi::lang::lexical_cast<int>(rating)));
-    r.update_row(NAME, userid, d);
+    d.add_number(movieid, pfi::lang::lexical_cast<int>(rating));
+    r.update_row(userid, d);
     n++;
   }
 }

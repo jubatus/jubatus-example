@@ -1,18 +1,17 @@
 package example.twitterstreaminglocation;
 
 import static example.twitterstreaminglocation.JubatusClassifierHelper.list;
-import static example.twitterstreaminglocation.JubatusClassifierHelper.newDatum;
-import static example.twitterstreaminglocation.JubatusClassifierHelper.newTupleStringString;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 import us.jubat.classifier.ClassifierClient;
-import us.jubat.classifier.Datum;
 import us.jubat.classifier.EstimateResult;
+import us.jubat.common.Datum;
 
 public class LocationClassifierApp {
 	// Jubatus Configuration
@@ -22,15 +21,14 @@ public class LocationClassifierApp {
 	private String instanceName = "";
 
 	public void estimateLocationFor(String sentence) throws Exception {
-		ClassifierClient client = new ClassifierClient(host, port, 10);
+		ClassifierClient client = new ClassifierClient(host, port, instanceName, 10);
 
 		// Create datum for Jubatus
-		Datum d = newDatum();
-		d.string_values.add(newTupleStringString("text", sentence));
+		Datum d = new Datum().addString("text", sentence);
 
 		// Send estimation query to Jubatus
-		List<List<EstimateResult>> result = client.classify(instanceName,
-				list(d));
+		List<List<EstimateResult>> result = client.classify(
+				Arrays.asList(d));
 		if (result.get(0).size() > 0) {
 			List<EstimateResult> est = result.get(0);
 			Collections.sort(est,

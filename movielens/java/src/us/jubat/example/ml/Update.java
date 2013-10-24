@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import us.jubat.recommender.RecommenderClient;
-import us.jubat.recommender.Datum;
-import us.jubat.recommender.TupleStringDouble;
-import us.jubat.recommender.TupleStringString;
+import us.jubat.common.Datum;
 
 public class Update {
   public static final String HOST = "127.0.0.1";
@@ -21,7 +19,7 @@ public class Update {
 
   public void start() throws Exception {
           // 1. Connect to Jubatus Server
-          RecommenderClient client = new RecommenderClient(HOST, PORT, 5);
+          RecommenderClient client = new RecommenderClient(HOST, PORT, NAME, 5);
 
           // 2. Prepare training data
           try{
@@ -36,21 +34,16 @@ public class Update {
 
 
                     Datum datum = new Datum();
-                    datum.string_values = new ArrayList<TupleStringString>();
-                    datum.num_values = new ArrayList<TupleStringDouble>();
                     // split the line for items
                     String[] strAry = line.split("\t");
   
                     try{
-                       TupleStringDouble data = new TupleStringDouble();
-                       data.first = strAry[1];
-                       data.second = Double.parseDouble(strAry[2]);
-                       datum.num_values.add(data);
-                       }catch(NumberFormatException e){
+                       datum.addNumber(strAry[1], Double.parseDouble(strAry[2]));
+                    }catch(NumberFormatException e){
                     }
 
                     // 3. training the model
-                    client.update_row(NAME, strAry[0], datum);
+                    client.updateRow(strAry[0], datum);
                   }
                 br.close();
           }catch(FileNotFoundException e){

@@ -10,22 +10,18 @@ using namespace pfi::lang;
 
 const string NAME = "recommender_ml";
 
-int main(int argc, char* argv[]){
+int main(int argc, char* argv[]) {
+  jubatus::recommender::client::recommender r("localhost", 9199, NAME, 5);
 
-  jubatus::recommender::client::recommender r("localhost", 9199, 5);
-
-  for (int i = 0 ; i< 943 ; i++)
-  {
-        similar_result sr = r.similar_row_from_id(NAME, pfi::lang::lexical_cast<string>(i), 10);
-        cout <<  "user " << i << " is similar to :";
-      for (size_t i = 1; i < sr.size(); ++i){
-        cout <<  sr[i].first << ", ";
-      }
-      cout << endl;
+  for (int i = 0; i < 943; i++) {
+    std::vector<id_with_score> sr
+        = r.similar_row_from_id(pfi::lang::lexical_cast<string>(i), 10);
+    cout <<  "user " << i << " is similar to :";
+    for (size_t i = 1; i < sr.size(); ++i) {
+      cout <<  sr[i].id << ", ";
+    }
+    cout << endl;
   }
-
-
-
 }
 
 
