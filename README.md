@@ -53,7 +53,7 @@ Jubatus Examples
 | 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         | Py           |
 | 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         | Py/Ja        |
 | 5. malware\_classification          | :+1:      |             |            |      |       |         | C++          |
-| 6. movielens                        |           | :+1:        |            |      |       |         | C++/Py/Ru    |
+| 6. movielens                        |           | :+1:        |            |      |       |         | C++/Py/Ru/Ja |
 | 7. npb\_similar\_player             |           | :+1:        |            |      |       |         | C++/Py/Ru    |
 | 8. rent                             |           |             | :+1:       |      |       |         | Py/Ru        |
 | 9. train\_route                     |           |             |            |      | :+1:  |         | Py           |

@@ -4,16 +4,25 @@
 import sys
 import json
 import re
+import httplib
 
 from tweepy.streaming import StreamListener, Stream
 from tweepy.auth import BasicAuthHandler
+from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
 from jubatus.classifier import types
 
-# Twitter Configuration (fill in your account information here)
-tw_username = ""
-tw_password = ""
+def oauth():
+    # Fill in your keys here:
+    consumer_key = 'XXXXXXXXXXXXXXXXXXXX'
+    consumer_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    access_key = 'XXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+    access_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+
+    auth = OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_key, access_secret)
+    return auth
 
 # Jubatus Configuration
 host = "127.0.0.1"
@@ -30,7 +39,7 @@ def print_green(msg, end="\n"):
     print_color(32, msg, end)
 
 class Trainer(StreamListener):
-    classifier = client.classifier(host, port)
+    classifier = client.Classifier(host, port, instance_name)
 
     def __init__(self, locations):
         super(Trainer, self).__init__()
@@ -61,15 +70,24 @@ class Trainer(StreamListener):
         detagged_text = remove_hashtags_from_tweet(status.text, hashtags)
 
         # Create datum for Jubatus
-        d = types.datum([], [])
-        d.string_values = [('text', detagged_text)]
+        d = types.Datum({'text': detagged_text})
 
         # Send training data to Jubatus
-        self.classifier.train(instance_name, [(loc.name, d)])
+        self.classifier.train([(loc.name, d)])
 
         # Print trained tweet
         print_green(loc.name, ' ')
         print detagged_text
+
+    def on_error(self, status_code):
+        if status_code in httplib.responses:
+            status_msg = httplib.responses[status_code]
+        else:
+            status_msg = str(status_code)
+        print "ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg)
+
+        # return False to stop on first error (do not retry)
+        return False
 
 class LocationFence(object):
     def __init__(self, name, longitude1, latitude1, longitude2, latitude2):
@@ -109,7 +127,7 @@ def train_tweets():
     for l in locations:
         request_coordinates += l.get_coordinates()
 
-    stream = Stream(BasicAuthHandler(tw_username, tw_password), Trainer(locations), secure=True)
+    stream = Stream(oauth(), Trainer(locations), secure=True)
     stream.filter(locations=request_coordinates)
 
 if __name__ == '__main__':
