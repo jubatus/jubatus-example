@@ -4,7 +4,7 @@
 import sys
 
 from jubatus.classifier import client
-from jubatus.classifier import types
+from jubatus.common import Datum
 
 # Jubatus configuration
 host = "127.0.0.1"
@@ -15,7 +15,7 @@ def estimate_location_for(text):
     classifier = client.Classifier(host, port, instance_name)
 
     # Create datum for Jubatus
-    d = types.Datum({'text': text})
+    d = Datum({'text': text})
 
     # Send estimation query to Jubatus
     result = classifier.classify([d])
