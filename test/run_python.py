@@ -28,8 +28,8 @@ with pushd(example_root):
 
     with pushd('npb_similar_player'):
         with run_server('jubarecommender', '-f', 'npb_similar_player.json'):
-            run('python', 'update.py')
-            run('python', 'analyze.py')
+            run('python', 'python/update.py')
+            run('python', 'python/analyze.py')
 
     with pushd('rent'):
         with run_server('jubaregression', '-f', 'rent.json'):
@@ -39,13 +39,13 @@ with pushd(example_root):
 
     with pushd('train_route'):
         with run_server('jubagraph', '-f', 'train_route.json'):
-            run('python', 'create_graph.py')
-            run('python', 'search_route.py', '0', '144')
+            run('python', 'python/create_graph.py')
+            run('python', 'python/search_route.py', '0', '144')
 
     with pushd('language_detection'):
         with run_server('jubaclassifier', '-f', 'space_split.json'):
-            run('python', 'train.py')
-            run('python', 'test.py', input='this is a pen\n\n')
+            run('python', 'python/train.py')
+            run('python', 'python/test.py', input='this is a pen\n\n')
 
     with pushd('trivial_stat'):
         with run_server('jubastat', '-f', 'stat.json'):
