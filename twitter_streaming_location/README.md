@@ -8,7 +8,7 @@ Python と Java の 2 言語で実装されています。いずれも動作は�
 準備
 ----
 
-* Jubatus 0.4.0 以降
+* Jubatus 0.5.0 以降
   - Jubatus のインストール手順は [Quick Start](http://jubat.us/ja/quickstart.html) を参照してください。
 
 * Twitter API を使用するため、[Twitter Developers サイト](https://dev.twitter.com/apps/new) でアプリケーションを登録し、Consumer Key/Secret, Access Key/Secret を入手してください。

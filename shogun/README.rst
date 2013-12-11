@@ -9,7 +9,7 @@
 準備
 ====
 
-- Jubauts 0.4.0 + Python クライアントをインストールします
+- Jubauts 0.5.0 + Python クライアントをインストールします
 
   - Python クライアントは `pip install jubatus` でインストールできます
 
