@@ -11,7 +11,7 @@ from tweepy.auth import BasicAuthHandler
 from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
-from jubatus.classifier import types
+from jubatus.common import Datum
 
 def oauth():
     # Fill in your keys here:
@@ -70,7 +70,7 @@ class Trainer(StreamListener):
         detagged_text = remove_hashtags_from_tweet(status.text, hashtags)
 
         # Create datum for Jubatus
-        d = types.Datum({'text': detagged_text})
+        d = Datum({'text': detagged_text})
 
         # Send training data to Jubatus
         self.classifier.train([(loc.name, d)])

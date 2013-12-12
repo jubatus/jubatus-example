@@ -3,7 +3,7 @@
 import sys, json, subprocess
 import random
 from jubatus.classifier import client
-from jubatus.classifier import types
+from jubatus.common import Datum
 
 NAME = "a"
 classifier = client.Classifier("127.0.0.1", 9199, NAME)
@@ -21,6 +21,6 @@ while fds != []:
         print("finished train of label %s \n" % (label))
         continue
     text_strip = text.rstrip()
-    datum = types.Datum({"text": text_strip})
+    datum = Datum({"text": text_strip})
     print("train %s : %s ..." %(label, text_strip))
     classifier.train([(label, datum)])
