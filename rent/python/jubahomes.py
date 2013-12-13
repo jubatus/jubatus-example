@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 import yaml
 
@@ -81,4 +83,7 @@ def main():
     result = client.estimate(analyze_data)
 
     print 'rent ....', round(result[0], 1)
+
+if __name__ == '__main__':
+    main()
 
