@@ -33,7 +33,7 @@ with pushd(example_root):
 
     with pushd('rent'):
         with run_server('jubaregression', '-f', 'rent.json'):
-            run('python', 'python/jubahomes/main.py',
+            run('python', 'python/jubahomes.py',
                 '-t', 'dat/rent-data.csv',
                 '-a', 'dat/myhome.yml')
 

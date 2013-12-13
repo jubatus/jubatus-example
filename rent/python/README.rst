@@ -23,16 +23,6 @@ jubaregression を起動します。
  $ jubaregression --configpath rent.json &
 
 
-インストール
-============
-
-このサンプルでは、コマンドラインアプリケーションをインストールして利用します。
-
-::
-
-  $ python setup.py install
-
-
 使い方
 ======
 
@@ -42,16 +32,16 @@ rent-data.csv を学習し、 dat/myhome.yaml に記載した条件の物件の�
 
 ::
 
-  $ jubahomes -t dat/rent-data.csv -a dat/myhome.yml
+  $ python jubahomes.py -t dat/rent-data.csv -a dat/myhome.yml
 
 dat/myhome.yaml を変更し、いろんな条件で物件の家賃を推測しましょう。
 
 ::
 
   $ edit dat/myhome.yml
-  $ jubahomes -a dat/myhome.yml
+  $ python jubahomes.py -a dat/myhome.yml
   $ edit dat/myhome.yml
-  $ jubahomes -a dat/myhome.yml
+  $ python jubahomes.py -a dat/myhome.yml
      :
 
 非常に簡単なサンプルです。プログラムを修正し、ペット可、ロフト付き、風呂トイレ別 などの条件を追加してみてはいかがでしょうか。
