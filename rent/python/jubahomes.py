@@ -1,9 +1,19 @@
+#!/usr/bin/env python
+
 import argparse
 import yaml
 
-from jubatus.regression.client import regression
+from jubatus.common import Datum
+from jubatus.regression.client import Regression
 from jubatus.regression.types import *
-from jubahomes.version import get_version
+
+VERSION = (0, 0, 1, '')
+
+def get_version():
+  version_string = '%s.%s.%s' % VERSION[0:3]
+  if len(VERSION[3]):
+    version_string += '-' + VERSION[3]
+  return version_string
 
 def parse_options():
   parser = argparse.ArgumentParser()
@@ -31,7 +41,7 @@ def parse_options():
 def main():
   args = parse_options()
 
-  client = regression('127.0.0.1', 9199)
+  client = Regression('127.0.0.1', 9199, '')
 
   # train
   num = 0
@@ -45,20 +55,16 @@ def main():
         num += 1
 
         rent, distance, space, age, stair, aspect = map(str.strip, data.strip().split(','))
-        string_values = [
-          ['aspect', aspect]
-        ]
-        num_values = [
-          ['distance', float(distance)],
-          ['space', float(space)],
-          ['age', float(age)],
-          ['stair', float(stair)]
-        ]
-        d = datum(string_values, num_values)
+        d = Datum({
+            'aspect': aspect,
+            'distance': float(distance),
+            'space': float(space),
+            'age': float(age),
+            'stair': float(stair) })
         train_data = [[float(rent), d]]
 
         # train
-        client.train('', train_data)
+        client.train(train_data)
 
     # print train number
     print 'train ...', num
@@ -66,18 +72,18 @@ def main():
   # anaylze
   with open(args.analyzedata, 'r') as analyzedata:
     myhome = yaml.load(analyzedata)
-    string_values = [
-      ['aspect', str(myhome['aspect'])]
-    ]
-    num_values = [
-      ['distance', float(myhome['distance'])],
-  git    ['space', float(myhome['space'])],
-      ['age', float(myhome['age'])],
-      ['stair', float(myhome['stair'])]
-    ]
-    d = datum(string_values, num_values)
+    d = Datum({
+        'aspect': str(myhome['aspect']),
+        'distance': float(myhome['distance']),
+        'space': float(myhome['space']),
+        'age': float(myhome['age']),
+        'stair': float(myhome['stair'])
+        })
     analyze_data = [d]
-    result = client.estimate('', analyze_data)
+    result = client.estimate(analyze_data)
 
     print 'rent ....', round(result[0], 1)
+
+if __name__ == '__main__':
+    main()
 
