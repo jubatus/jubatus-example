@@ -67,7 +67,7 @@ def add_station(c, name):
 
 def print_stations():
     for station in sorted(stations.keys(), key=lambda k: int(stations[k])):
-        print "%s\t%s" % (stations[station], station)
+        print (u"%s\t%s" % (stations[station], station)).encode('utf-8')
 
 if __name__ == '__main__':
     # Create jubagraph client.
