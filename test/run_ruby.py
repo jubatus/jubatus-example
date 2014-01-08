@@ -20,8 +20,8 @@ with pushd(example_root):
 
     with pushd('npb_similar_player'):
         with run_server('jubarecommender', '-f', 'npb_similar_player.json'):
-            run('ruby', 'update.rb')
-            run('ruby', 'analyze.rb')
+            run('ruby', 'ruby/update.rb')
+            run('ruby', 'ruby/analyze.rb')
 
     with pushd('rent'):
         with run_server('jubaregression', '-f', 'rent.json'):
@@ -30,5 +30,5 @@ with pushd(example_root):
 
     with pushd('language_detection'):
         with run_server('jubaclassifier', '-f', 'space_split.json'):
-            run('ruby', 'train.rb')
-            run('ruby', 'test.rb', input='this is a pen\n\n')
+            run('ruby', 'ruby/train.rb')
+            run('ruby', 'ruby/test.rb', input='this is a pen\n\n')
