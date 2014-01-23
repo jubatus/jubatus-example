@@ -23,9 +23,10 @@ jubaregression を起動します。
 
 実行
 ============
-dat/rent-data.csv は賃貸情報サイトから取得した「S町の1Rマンション」の賃貸情報です。
 
-train.rbでrent-data.csv を学習し、test.rbで対話的に家賃を推定できます。
+`../dat/rent-data.csv` は賃貸情報サイトから取得した「S町の1Rマンション」の賃貸情報です。
+
+`train.rb` で `rent-data.csv` を学習し、`test.rb` で対話的に家賃を推定できます。
 
 ```
   $ ruby train.rb ../dat/rent-data.csv

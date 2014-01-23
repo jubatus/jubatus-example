@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys, json, subprocess
+import glob
 import random
 from jubatus.classifier import client
 from jubatus.common import Datum
@@ -8,9 +9,7 @@ from jubatus.common import Datum
 NAME = "a"
 classifier = client.Classifier("127.0.0.1", 9199, NAME)
 
-file_list = subprocess.Popen(["ls | grep _train.txt"],
-                             stdout = subprocess.PIPE,
-                             shell = True).communicate()[0].split('\n')[0:-1]
+file_list = glob.glob('../dat/*_train.txt')
 
 fds = map(lambda x: [x.replace("_train.txt", ""), open(x, "r")], file_list)
 while fds != []:

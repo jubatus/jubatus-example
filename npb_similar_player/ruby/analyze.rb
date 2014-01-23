@@ -8,7 +8,7 @@ require 'jubatus/recommender/client'
 
 recommender =
   Jubatus::Recommender::Client::Recommender.new(HOST, PORT, NAME)
-File.open("dat/baseball.csv") {|f|
+File.open("../dat/baseball.csv") {|f|
   f.each{|line|
     pname, team, bave, games, pa, atbat, hit, homerun, runsbat,
       stolen, bob, hbp, strikeout, sacrifice, dp, slg, obp,

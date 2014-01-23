@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     recommender = client.Recommender("127.0.0.1", 9199, NAME)
 
-    for line in open('dat/baseball.csv'):
+    for line in open('../dat/baseball.csv'):
         pname, team, bave, games, pa, atbat, hit, homerun, runsbat, stolen, bob, hbp, strikeout, sacrifice, dp, slg, obp, ops, rc27, xr27 = line[:-1].split(',')
         d = Datum({
           "チーム": team,

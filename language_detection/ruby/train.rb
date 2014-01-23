@@ -4,7 +4,7 @@ require 'pp'
 NAME = "a"
 cli = Jubatus::Classifier::Client::Classifier.new "127.0.0.1", 9199, NAME
 
-file_list = `ls`.split(" ").grep(/_train\.txt$/)
+file_list = Dir.glob("../dat/*_train.txt")
 pp file_list
 begin
   fds = file_list.map {|m|
