@@ -14,14 +14,14 @@
 
 - このサンプルでは、 num_feature の plugin を利用することもできます。plugin は以下の手順でインストールします。
 
-  - Jubatus の plugin ディレクトリにビルドした .soファイル をコピーしておきます。
+  - `/path/to/jubatus` にはJubatusのインストールパス（ `/usr/local` など）を指定して下さい。
 
 ::
 
  $ cd normalize_plugin
- $ ./waf configure
+ $ ./waf configure --prefix=/path/to/jubatus
  $ ./waf build
- $ cp build/src/*.so /path/to/jubatus/lib/jubatus/plugin
+ $ ./waf install
 
 
 サーバーの起動
