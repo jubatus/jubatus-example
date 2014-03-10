@@ -20,6 +20,7 @@ C++
 
 ::
 
+  cd cpp
   ./waf configure
   ./waf build
   ./build/ml_update
@@ -30,6 +31,7 @@ Python
 
 ::
 
+ cd python
  ./ml_update.py
  ./ml_analyze.py
 
@@ -38,6 +40,7 @@ Ruby
 
 ::
 
+ cd ruby
  ./ml_update.rb
  ./ml_analyze.rb
 
@@ -46,6 +49,7 @@ Java
 
 ::
 
+ cd java
  ./run-update.sh
  ./run-analyze.sh
 
