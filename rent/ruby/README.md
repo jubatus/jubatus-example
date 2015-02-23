@@ -8,7 +8,7 @@
 準備
 ====
 
-- Jubauts 0.5.0 + Ruby クライアントをインストールします。
+- Jubauts 0.5.0 以降 + Ruby クライアントをインストールします。
 
   - Ruby クライアントは `gem install jubatus` でインストールできます。
 
