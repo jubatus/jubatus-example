@@ -8,7 +8,7 @@ Twitter Streaming Classification
 準備
 ----
 
-* Jubatus 0.5.0 + Python クライアント、[tweepy](https://github.com/tweepy/tweepy) をインストールしてください。
+* Jubatus 0.5.0 以降 + Python クライアント、[tweepy](https://github.com/tweepy/tweepy) をインストールしてください。
 
 * 各言語版の Wikipedia 要約データをダウンロードしてください (2 言語以上)。
 
