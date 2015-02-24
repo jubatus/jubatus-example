@@ -1,0 +1,85 @@
+{
+    "converter" : {
+        "num_filter_types" : {
+            "fixed_acidity_norm" : {
+                "method": "linear_normalization",
+                "min": "6.0",
+                "max":"14.2"
+            },
+            "volatile_acidity_norm" : {
+                "method": "linear_normalization",
+                "min": "0.21",
+                "max":"1.1"
+            },
+            "citric_acid_norm" : {
+                "method": "linear_normalization",
+                "min": "0.38",
+                "max":"1.66"
+            },
+            "residual_sugar_norm" : {
+                "method": "linear_normalization",
+                "min": "0.8",
+                "max":"65.8"
+            },
+            "chlorides_norm" : {
+                "method": "linear_normalization",
+                "min": "0.02",
+                "max":"0.346"
+            },
+            "free_sulfur_dioxide_norm" : {
+                "method": "linear_normalization",
+                "min": "22.0",
+                "max":"289.0"
+            },
+            "total_sulfur_dioxide_norm" : {
+                "method": "linear_normalization",
+                "min": "98.0",
+                "max":"440.0"
+            },
+            "density_norm" : {
+                "method": "linear_normalization",
+                "min": "0.98941",
+                "max":"1.03898"
+            },
+            "pH_norm" : {
+                "method": "linear_normalization",
+                "min": "3.26",
+                "max":"3.82"
+            },
+            "sulphates_norm" : {
+                "method": "linear_normalization",
+                "min": "0.32",
+                "max":"1.08"
+            },
+            "alcohol_norm" : {
+                "method": "linear_normalization",
+                "min": "11.8",
+                "max":"14.2"
+            }
+        },
+        "num_filter_rules" : [
+            {"key" : "fixed_acidity", "type" : "fixed_acidity_norm", "suffix": "_normed"},
+            {"key" : "volatile_acidity", "type" : "volatile_acidity_norm", "suffix": "_normed"},
+            {"key" : "citric_acid", "type" : "citric_acid_norm", "suffix": "_normed"},
+            {"key" : "residual_sugar", "type" : "residual_sugar_norm", "suffix": "_normed"},
+            {"key" : "chlorides", "type" : "chlorides_norm", "suffix": "_normed"},
+            {"key" : "free_sulfur_dioxide", "type" : "free_sulfur_dioxide_norm", "suffix": "_normed"},
+            {"key" : "total_sulfur_dioxide", "type": "total_sulfur_dioxide_norm", "suffix": "_normed"},
+            {"key" : "density", "type" : "density_norm", "suffix": "_normed"},
+            {"key" : "pH", "type" : "pH_norm", "suffix": "_normed"},
+            {"key" : "sulphates", "type" : "sulphates_norm", "suffix": "_normed"},
+            {"key" : "alcohol", "type" : "alcohol_norm", "suffix": "_normed"}
+        ],
+        "num_rules" : [
+            {
+                "key" : "*_normed",
+                "type" : "num"
+            }
+        ]
+    },
+    "parameter" : {
+        "sensitivity" : 0.1,
+        "regularization_weight" : 0.1
+    },
+    "method": "PA"
+}
