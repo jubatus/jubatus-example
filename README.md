@@ -23,7 +23,7 @@ Jubatus Examples
    - 分類器を利用した応用です。バイナリの実行を受け取って、マルウェアかどうかを推定します。
 6. movielens
    - recommender
-   - C++/Python/Ruby
+   - C++/Python/Ruby/Java
    - レコメンダーを利用した最も簡単なサンプルです。MovieLens という映画の評価情報公開データを利用して、あるユーザーに対して似ているユーザーを表示します。
 7. npb\_similar\_player
    - recommender
