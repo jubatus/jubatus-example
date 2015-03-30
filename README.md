@@ -45,17 +45,22 @@ Jubatus Examples
    - stat
    - Python
    - 統計分析機能を利用した最も簡単なサンプルです。果物の直径・重さ・価格を学習し、フルーツごとにパラメータの合計値や標準偏差などの統計分析を行います。
+11. trivial\_burst
+   - burst
+   - Python
+   - バースト検知機能を利用した最も簡単なサンプルです。仮想の時系列データを生成してバースト検知を行います。
 
-|                                     | classifer | recommender | regression | stat | graph | anomaly | Language     |
-|-------------------------------------|-----------|-------------|------------|------|-------|---------|--------------|
-| 1. shogun                           | :+1:      |             |            |      |       |         | Py/Ru/Ja     |
-| 2. gender                           | :+1:      |             |            |      |       |         | C++/Py/Ru/Ja |
-| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         | Py           |
-| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         | Py/Ja        |
-| 5. malware\_classification          | :+1:      |             |            |      |       |         | C++          |
-| 6. movielens                        |           | :+1:        |            |      |       |         | C++/Py/Ru/Ja |
-| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         | C++/Py/Ru    |
-| 8. rent                             |           |             | :+1:       |      |       |         | Py/Ru        |
-| 9. train\_route                     |           |             |            |      | :+1:  |         | Py           |
-|10. language\_detection              | :+1:      |             |            |      |       |         | Py/Ru        |
-|11. trivial_stat                     |           |             |            | :+1: |       |         | Py           |
+|                                     | classifer | recommender | regression | stat | graph | anomaly | burst | Language     |
+|-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------------|
+| 1. shogun                           | :+1:      |             |            |      |       |         |       | Py/Ru/Ja     |
+| 2. gender                           | :+1:      |             |            |      |       |         |       | C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         |       | Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         |       | Py/Ja        |
+| 5. malware\_classification          | :+1:      |             |            |      |       |         |       | C++          |
+| 6. movielens                        |           | :+1:        |            |      |       |         |       | C++/Py/Ru/Ja |
+| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         |       | C++/Py/Ru    |
+| 8. rent                             |           |             | :+1:       |      |       |         |       | Py/Ru        |
+| 9. train\_route                     |           |             |            |      | :+1:  |         |       | Py           |
+|10. language\_detection              | :+1:      |             |            |      |       |         |       | Py/Ru        |
+|11. trivial\_stat                    |           |             |            | :+1: |       |         |       | Py           |
+|12. trivial\_burst                   |           |             |            |      |       |         | :+1:  | Py           |
