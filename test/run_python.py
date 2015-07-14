@@ -53,6 +53,11 @@ with pushd(example_root):
                 run('python', 'train.py')
                 run('python', 'test.py', input='this is a pen\n\n')
 
+    with pushd('trivial_burst'):
+        with run_server('jubaburst', '-f', 'config.json'):
+            with pushd('python'):
+                run('python', 'burst_dummy_stream.py')
+
     with pushd('trivial_stat'):
         with run_server('jubastat', '-f', 'stat.json'):
             with pushd('python'):

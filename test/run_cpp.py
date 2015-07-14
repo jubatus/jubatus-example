@@ -21,3 +21,11 @@ with pushd(example_root):
                 run('python', 'waf')
                 run('./build/ml_update')
                 run('./build/ml_analysis')
+
+    with pushd('npb_similar_player'):
+        with run_server('jubarecommender', '-f', 'npb_similar_player.json'):
+            with pushd('cpp'):
+                run('python', 'waf', 'configure')
+                run('python', 'waf')
+            run('./build/update')
+            run('./build/analyze')
