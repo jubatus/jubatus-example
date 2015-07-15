@@ -64,3 +64,8 @@ Jubatus Examples
 |10. language\_detection              | :+1:      |             |            |      |       |         |       | Py/Ru        |
 |11. trivial\_stat                    |           |             |            | :+1: |       |         |       | Py           |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  | Py           |
+
+Python を使用したサンプルについて
+------------------------------------
+
+Jubatus の Python クライアントは Python 3.x をサポートしていますが、本リポジトリの一部のサンプルアプリケーションは Python 3 で動作しない可能性があります。
