@@ -37,3 +37,9 @@ with pushd(example_root):
             with pushd('ruby'):
                 run('ruby', 'train.rb')
                 run('ruby', 'test.rb', input='this is a pen\n\n')
+
+    with pushd('winequality'):
+        with run_server('jubaregression', '-f', 'config.json'):
+            with pushd('ruby'):
+                run('ruby', 'train.rb')
+                run('ruby', 'test.rb')

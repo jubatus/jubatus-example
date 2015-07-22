@@ -45,10 +45,14 @@ Jubatus Examples
    - stat
    - Python
    - 統計分析機能を利用した最も簡単なサンプルです。果物の直径・重さ・価格を学習し、フルーツごとにパラメータの合計値や標準偏差などの統計分析を行います。
-11. trivial\_burst
+12. trivial\_burst
    - burst
    - Python
    - バースト検知機能を利用した最も簡単なサンプルです。仮想の時系列データを生成してバースト検知を行います。
+13. winequality
+   - regression
+   - Ruby
+   - 回帰を利用した最も簡単なサンプルです。Wine Quality データセットを利用して、ワインの情報から品質を推測します。
 
 |                                     | classifer | recommender | regression | stat | graph | anomaly | burst | Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------------|
@@ -64,3 +68,4 @@ Jubatus Examples
 |10. language\_detection              | :+1:      |             |            |      |       |         |       | Py/Ru        |
 |11. trivial\_stat                    |           |             |            | :+1: |       |         |       | Py           |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  | Py           |
+|13. winequality                      |           | :+1:        |            |      |       |         |       | Ru           |
