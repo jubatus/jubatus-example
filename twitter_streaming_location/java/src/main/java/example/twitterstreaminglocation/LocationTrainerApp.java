@@ -1,7 +1,5 @@
 package example.twitterstreaminglocation;
 
-import static example.twitterstreaminglocation.JubatusClassifierHelper.list;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
