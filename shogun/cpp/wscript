@@ -6,7 +6,6 @@ def configure(conf):
   conf.env.CXXFLAGS += ['-O2', '-Wall', '-g', '-pipe']
   #conf.env.CXXFLAGS += ['-std=c++11']
   conf.load('compiler_cxx')
-  #conf.check_cfg(package = 'pficommon', args = '--cflags --libs')
   conf.check_cxx(lib = 'msgpack')
   conf.check_cxx(lib = 'jubatus_mpio')
   conf.check_cxx(lib = 'jubatus_msgpack-rpc')
@@ -16,5 +15,5 @@ def build(bld):
   bld.program(
     source = 'shogun.cpp',
     target = 'shogun',
-    use = 'PFICOMMON MSGPACK JUBATUS_MPIO JUBATUS_MSGPACK-RPC',
+    use = 'MSGPACK JUBATUS_MPIO JUBATUS_MSGPACK-RPC',
     )
