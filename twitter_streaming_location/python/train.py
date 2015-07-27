@@ -7,7 +7,6 @@ import re
 import httplib
 
 from tweepy.streaming import StreamListener, Stream
-from tweepy.auth import BasicAuthHandler
 from tweepy.auth import OAuthHandler
 
 from jubatus.classifier import client
