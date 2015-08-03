@@ -7,7 +7,7 @@ You can try various simulation settings by modifying config file(config/slot.con
 
 ## Preparation
 
-- Install Jubatus 0.5.0 or later
+- Install Jubatus 0.7.0 or later
 - Install Jubatus Python Client
     - python 3.x is needed
 
