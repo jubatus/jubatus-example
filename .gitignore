@@ -1,1 +1,5 @@
 *.pyc
+.lock-wafbuild
+.waf-*/
+.waf3-*/
+build/
