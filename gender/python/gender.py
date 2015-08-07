@@ -31,5 +31,5 @@ results = client.classify(test_data)
 
 for result in results:
     for r in result:
-        print(r.label, r.score)
-    print
+        print(('%s: %f' % (r.label, r.score)))
+    print('------')
