@@ -1,6 +1,10 @@
-import configparser
+
 import random
 import jubatus
+try:
+    import configparser as parser 
+except ImportError:
+    import ConfigParser as parser
 
 class Slot:
     def __init__(self, p, ave, std):
@@ -28,7 +32,7 @@ if __name__ == '__main__':
     player = 'player_A'
     cl = jubatus.Bandit(host, port, name, 0)
 
-    config = configparser.SafeConfigParser()
+    config = parser.SafeConfigParser()
     config.read('../config/slot.conf')
     slots = {}
 
