@@ -11,5 +11,5 @@ if __name__ == '__main__':
 
     for i in range(0,943):
         sr = recommender.similar_row_from_id(str(i) , 10);
-        print "user ", str(i),  " is similar to :", map(str, sr)
+        print("user ", str(i),  " is similar to :", list(map(str, sr)))
   
