@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 
-import json, commands
+import json, subprocess
 from jubatus.classifier import client
 from jubatus.common import Datum
 
 while True:
-    buf = raw_input("> ")
+    try:
+        buf = raw_input("> ")
+    except:
+        buf = input("> ")
     if buf == "":
         break
     classifier = client.Classifier("127.0.0.1", 9199, "")
