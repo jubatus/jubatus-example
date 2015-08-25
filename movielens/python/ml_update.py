@@ -16,6 +16,6 @@ if __name__ == '__main__':
         userid, movieid, rating, mtime = line[:-1].split('\t')
         datum = Datum({str(movieid): float(rating)})
         if (n % 1000 == 0):
-            print n
+            print(n)
         recommender.update_row(userid, datum)
         n = n + 1;
