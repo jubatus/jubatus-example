@@ -68,7 +68,7 @@ Jubatus Examples
 |10. language\_detection              | :+1:      |             |            |      |       |         |       | Py/Ru        |
 |11. trivial\_stat                    |           |             |            | :+1: |       |         |       | Py           |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  | Py           |
-|13. winequality                      |           | :+1:        |            |      |       |         |       | Ru           |
+|13. winequality                      |           |             | :+1:       |      |       |         |       | Ru           |
 
 Python を使用したサンプルについて
 ------------------------------------
