@@ -23,8 +23,8 @@ extern "C" {
   jubatus::core::fv_converter::num_filter* create(std::map<std::string, std::string>& params) {
     const std::string& min_str = get_or_die(params, "min");
     const std::string& max_str = get_or_die(params, "max");
-    double min_ = pfi::lang::lexical_cast<double>(min_str);
-    double max_ = pfi::lang::lexical_cast<double>(max_str);
+    double min_ = jubatus::util::lang::lexical_cast<double>(min_str);
+    double max_ = jubatus::util::lang::lexical_cast<double>(max_str);
     if (min_ == max_) {
       throw JUBATUS_EXCEPTION(jubatus::core::fv_converter::converter_exception(std::string("MAX equals to MIN.")));
     }
