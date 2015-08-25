@@ -12,7 +12,7 @@ num = 0
 diff = 0.0
 
 File.open(filename, "r") {|f|
-  names = f.readline.split(";").map{|n| n.gsub(/"/, "").chomp}
+  names = f.readline.split(";").map{|n| n.gsub(/"/, "").chomp.gsub(/ /, "_")}
   f.each_line {|line|
     values = line.split(";").map{|n| n.to_f}
     datum = Hash[*names.zip(values).flatten]
