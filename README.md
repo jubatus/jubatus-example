@@ -53,22 +53,27 @@ Jubatus Examples
    - regression
    - Ruby
    - 回帰を利用した最も簡単なサンプルです。Wine Quality データセットを利用して、ワインの情報から品質を推測します。
+14. slot
+   - bandit
+   - python
+   - 多腕バンディットを利用したサンプルです。報酬の期待値が異なる複数のスロットマシンから、一定回数のプレイで得られる報酬を多腕バンディットで最大化します。
 
-|                                     | classifer | recommender | regression | stat | graph | anomaly | burst | Language     |
-|-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------------|
-| 1. shogun                           | :+1:      |             |            |      |       |         |       | Py/Ru/Ja     |
-| 2. gender                           | :+1:      |             |            |      |       |         |       | C++/Py/Ru/Ja |
-| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         |       | Py           |
-| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         |       | Py/Ja        |
-| 5. malware\_classification          | :+1:      |             |            |      |       |         |       | C++          |
-| 6. movielens                        |           | :+1:        |            |      |       |         |       | C++/Py/Ru/Ja |
-| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         |       | C++/Py/Ru    |
-| 8. rent                             |           |             | :+1:       |      |       |         |       | Py/Ru        |
-| 9. train\_route                     |           |             |            |      | :+1:  |         |       | Py           |
-|10. language\_detection              | :+1:      |             |            |      |       |         |       | Py/Ru        |
-|11. trivial\_stat                    |           |             |            | :+1: |       |         |       | Py           |
-|12. trivial\_burst                   |           |             |            |      |       |         | :+1:  | Py           |
-|13. winequality                      |           |             | :+1:       |      |       |         |       | Ru           |
+|                                     | classifer | recommender | regression | stat | graph | anomaly | burst | bandit |Language     |
+|-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------|-------------|
+| 1. shogun                           | :+1:      |             |            |      |       |         |       |        |Py/Ru/Ja     |
+| 2. gender                           | :+1:      |             |            |      |       |         |       |        |C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |             |            |      |       |         |       |        |Py           |
+| 4. twitter\_streaming\_location     | :+1:      |             |            |      |       |         |       |        |Py/Ja        |
+| 5. malware\_classification          | :+1:      |             |            |      |       |         |       |        |C++          |
+| 6. movielens                        |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru/Ja |
+| 7. npb\_similar\_player             |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru    |
+| 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru        |
+| 9. train\_route                     |           |             |            |      | :+1:  |         |       |        |Py           |
+|10. language\_detection              | :+1:      |             |            |      |       |         |       |        |Py/Ru        |
+|11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py           |
+|12. trivial\_burst                   |           |             |            |      |       |         | :+1:  |        |Py           |
+|13. winequality                      |           |             | :+1:       |      |       |         |       |        |Ru           |
+|14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py           |   
 
 Python を使用したサンプルについて
 ------------------------------------
