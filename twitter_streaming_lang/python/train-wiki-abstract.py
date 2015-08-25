@@ -36,7 +36,7 @@ class Handler(xml.sax.handler.ContentHandler):
         self.classifier.train([[self.label, d]])
         self.count += 1
         if (self.count % 1000 == 0):
-            print "Training(%s): %d ..." % (self.label, self.count)
+            print("Training(%s): %d ..." % (self.label, self.count))
 
 def train_wikipedia_abstract(label, xmlfile):
     classifier = client.Classifier(host, port, instance_name)
@@ -48,11 +48,11 @@ def train_wikipedia_abstract(label, xmlfile):
 if __name__ == '__main__':
     try:
         if len(sys.argv) != 3:
-            print "Usage: %s LANG LANGwiki-latest-abstract.xml" % sys.argv[0]
+            print("Usage: %s LANG LANGwiki-latest-abstract.xml" % sys.argv[0])
             sys.exit(1)
         else:
             label = sys.argv[1]
             xmlfile = sys.argv[2]
             train_wikipedia_abstract(label, xmlfile)
     except KeyboardInterrupt:
-        print "Stopped."
+        print("Stopped.")
