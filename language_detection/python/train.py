@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-import sys, json, subprocess
+import sys
+import json
+import subprocess
 import glob
 import random
 from jubatus.classifier import client
