@@ -3,14 +3,14 @@
 #include <sstream>
 #include <time.h>
 #include <sys/time.h>
+#include <jubatus/util/lang/cast.h>
 #include <jubatus/client/recommender_client.hpp>
 #include <jubatus/client/recommender_types.hpp>
-#include <pficommon/lang/util.h>
 
 using namespace std;
 using namespace jubatus;
 using namespace jubatus::recommender;
-using namespace pfi::lang;
+using namespace jubatus::util::lang;
 
 const string NAME = "recommender_ml";
 
@@ -36,7 +36,7 @@ int main(int argc, char* argv[]){
         >> hbp >> strikeout >> sacrifice >> dp >> slg
         >> obp >> ops >> rc27 >> xr27;
     
-    std::vector<id_with_score> sr = r.similar_row_from_id(pfi::lang::lexical_cast<string>(pname), 4);
+    std::vector<id_with_score> sr = r.similar_row_from_id(lexical_cast<string>(pname), 4);
     cout << "player " << pname << " is similar to :";
     for (size_t i = 1; i < sr.size(); ++i) {
       cout << " " << sr[i].id;
