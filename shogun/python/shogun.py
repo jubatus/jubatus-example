@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Python 2 compatibility:
+from __future__ import unicode_literals
+
 host = '127.0.0.1'
 port = 9199
 name = 'test'
@@ -11,6 +14,15 @@ import random
 
 import jubatus
 from jubatus.common import Datum
+
+def _output(unicode_value):
+  if hasattr(sys.stdout, 'buffer'):
+    # for Python 3
+    stdout = sys.stdout.buffer
+  else:
+    # for Python 2
+    stdout = sys.stdout
+  stdout.write(unicode_value.encode('utf-8'))
 
 def train(client):
     # prepare training data
@@ -83,10 +95,9 @@ def predict(client):
     for d in data:
         res = client.classify([d])
         # get the predicted shogun name
-        sys.stdout.write(max(res[0], key = lambda x: x.score).label)
-        sys.stdout.write(' ')
-        sys.stdout.write(d.string_values[0][1])
-        sys.stdout.write('\n')
+        shogun_name = max(res[0], key = lambda x: x.score).label
+        first_name = d.string_values[0][1]
+        _output('{0} {1}\n'.format(shogun_name, first_name))
 
 if __name__ == '__main__':
     # connect to the jubatus
