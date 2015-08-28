@@ -1,7 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import urllib
+# Python 2 compatibility:
+from __future__ import unicode_literals
+
+try:
+    # for Python 3
+    import urllib.request as urllib
+except:
+    # for Python 2
+    import urllib
+
 from xml.dom import minidom, Node
 
 from jubatus.graph import client, types
@@ -67,7 +76,7 @@ def add_station(c, name):
 
 def print_stations():
     for station in sorted(stations.keys(), key=lambda k: int(stations[k])):
-        print (u"%s\t%s" % (stations[station], station)).encode('utf-8')
+        print ("{0}\t{1}".format(stations[station], station))
 
 if __name__ == '__main__':
     # Create jubagraph client.
@@ -83,5 +92,5 @@ if __name__ == '__main__':
     create_graph(c, get_station_join(11312)) # 中央線
 
     # Print station IDs; you need the ID to search route.
-    print "=== Station IDs ==="
+    print ("=== Station IDs ===")
     print_stations()
