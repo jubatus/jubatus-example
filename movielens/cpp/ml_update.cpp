@@ -5,7 +5,7 @@
 #include <sys/time.h>
 #include <jubatus/client/recommender_client.hpp>
 #include <jubatus/client/recommender_types.hpp>
-#include <pficommon/lang/util.h>
+#include <jubatus/util/lang/util.h>
 
 using namespace std;
 using jubatus::client::common::datum;
@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     datum d;
     if (n % 1000 == 0)
        cout << n << endl;
-    d.add_number(movieid, pfi::lang::lexical_cast<int>(rating));
+    d.add_number(movieid, jubatus::util::lang::lexical_cast<int>(rating));
     r.update_row(userid, d);
     n++;
   }

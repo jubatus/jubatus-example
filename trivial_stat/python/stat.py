@@ -23,9 +23,9 @@ if __name__ == '__main__':
   # 4. 結果の出力
   for fr in ["orange", "apple","melon"]:
     for par in ["dia","wei", "pri"]:
-      print "sum :", fr + par,stat.sum(fr + par)
-      print "sdv :", fr + par,stat.stddev(fr + par)
-      print "max :", fr + par,stat.max(fr + par)
-      print "min :", fr + par,stat.min(fr + par)
-      print "ent :", fr + par,stat.entropy(fr + par)
-      print "mmt :", fr + par,stat.moment(fr + par, 1, 0.0)
+      print("sum :", fr + par,stat.sum(fr + par))
+      print("sdv :", fr + par,stat.stddev(fr + par))
+      print("max :", fr + par,stat.max(fr + par))
+      print("min :", fr + par,stat.min(fr + par))
+      print("ent :", fr + par,stat.entropy(fr + par))
+      print("mmt :", fr + par,stat.moment(fr + par, 1, 0.0))

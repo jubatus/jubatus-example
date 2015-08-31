@@ -1,5 +1,5 @@
 #include <jubatus/core/plugin.hpp>
-#include <pficommon/lang/cast.h>
+#include <jubatus/util/lang/cast.h>
 #include <jubatus/core/fv_converter/exception.hpp>
 #include <map>
 #include <string>
