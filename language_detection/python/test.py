@@ -13,10 +13,11 @@ while True:
         # for Python 3
         input_func = input
         # pass
-    if input_func == "":
+    buf = input_func("> ")
+    if buf == "":
         break
     classifier = client.Classifier("127.0.0.1", 9199, "")
-    datum = Datum({"text": input_func("> ").rstrip()})
+    datum = Datum({"text": buf.rstrip()})
     result = classifier.classify([datum])
     if len(result[0]) == 0:
         print("nothing")
