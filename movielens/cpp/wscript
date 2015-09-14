@@ -6,21 +6,19 @@ def configure(conf):
   conf.env.CXXFLAGS += ['-O2', '-Wall', '-g', '-pipe']
   conf.load('compiler_cxx')
   conf.check_cfg(package = 'jubatus_core', args = '--cflags --libs')
-  conf.check_cxx(lib = 'msgpack')
-  conf.check_cxx(lib = 'jubatus_mpio')
-  conf.check_cxx(lib = 'jubatus_msgpack-rpc')
+  conf.check_cfg(package = 'jubatus-client', args = '--cflags --libs')
 
 
 def build(bld):
   bld.program(
     source = 'ml_update.cpp',
     target = 'ml_update',
-    use = 'JUBATUS_CORE MSGPACK JUBATUS_MPIO JUBATUS_MSGPACK-RPC',
+    use = 'JUBATUS_CORE JUBATUS-CLIENT',
     )
 
   bld.program(
     source = 'ml_analysis.cpp',
     target = 'ml_analysis',
-    use = 'JUBATUS_CORE MSGPACK JUBATUS_MPIO JUBATUS_MSGPACK-RPC',
+    use = 'JUBATUS_CORE JUBATUS-CLIENT',
     )
 

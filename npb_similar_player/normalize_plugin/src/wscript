@@ -11,7 +11,7 @@ def build(bld):
     bld.shlib(
       source = plugin_name + '.cpp',
       target = plugin_name,
-      use=['JUBATUS_CORE','JUBATUS'],
+      use=['JUBATUS_CORE'],
       )
 
 
