@@ -67,7 +67,7 @@ def main():
         client.train(train_data)
 
     # print train number
-    print ('train ... {}'.format(num))
+    print ('train ... {0}'.format(num))
 
   # anaylze
   with open(args.analyzedata, 'r') as analyzedata:
@@ -82,7 +82,7 @@ def main():
     analyze_data = [d]
     result = client.estimate(analyze_data)
 
-    print ('rent .... {}'.format(round(result[0], 1)))
+    print ('rent .... {0}'.format(round(result[0], 1)))
 
 if __name__ == '__main__':
     main()
