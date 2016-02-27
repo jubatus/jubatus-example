@@ -35,7 +35,7 @@ def train(classifier, train_data):
         classifier.train([LabeledDatum(data[0], data[1])])
 
 def test(classifier, test_data):
-    count_ok, count_ng = 0, 0
+    count_ok = 0
     for data in test_data:
         predict = classifier.classify([data[1]])
         estimated = get_most_likely(predict[0])
@@ -45,8 +45,8 @@ def test(classifier, test_data):
             count_ok += 1
         else:
             print("NG, answer:{0}, estimated:{1}".format(answer, estimated))
-            pass
     accuracy = float(count_ok) / float(len(test_data))
+    
     print("------------------")
     print("OK: {0}".format(count_ok))
     print("NG: {0}".format(len(test_data) - count_ok))
