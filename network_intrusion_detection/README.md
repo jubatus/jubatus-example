@@ -8,22 +8,30 @@ Jubatusのjubaanomalyを使ったネットワーク侵入検出のサンプル�
 ## データ
 
 以下の要領で学習データをダウンロードします。
-    $ wget http://kdd.ics.uci.edu/databases/kddcup99/kddcup.data_10_percent.gz
-    $ gunzip kddcup.data_10_percent.gz
-    $ mv kddcup.data_10_percent kddcup.data_10_percent.txt
+```
+$ wget http://kdd.ics.uci.edu/databases/kddcup99/kddcup.data_10_percent.gz
+$ gunzip kddcup.data_10_percent.gz
+$ mv kddcup.data_10_percent kddcup.data_10_percent.txt
+```
 
 ## 実行
 
 ### サーバの起動
 jubaanomalyを起動します。
-    $ jubaanomaly --configpath config.json
+```
+$ jubaanomaly --configpath config.json
+```
     
 ### 実行(python)
 python クライアントを起動し、外れ値検知を行います。
-    $ cd python
-    $ python anomaly.py
+```
+$ cd python
+$ python anomaly.py
+```
 
 ### 実行(ruby)
 ruby クライアントを起動し、外れ値検知を行います。
-    $ cd ruby
-    $ ruby anomaly.rb
+```
+$ cd ruby
+$ ruby anomaly.rb
+```
