@@ -61,6 +61,10 @@ Jubatus Examples
    - classifier
    - python
    - 分類器を用いた簡単なサンプルです。iris データセットを利用して、花びらの幅、長さ、がくの幅、長さから、アヤメの種類を推定します。
+16. network\_intrusion\_detection
+    - anomaly
+    - Python/Ruby
+    - アノマリーを用いた簡単なサンプルです。KDDCup 1999 データセットを利用して、ネットワーク侵入検出を行います。
 
 |                                     | classifer | recommender | regression | stat | graph | anomaly | burst | bandit |Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------|-------------|
@@ -79,3 +83,9 @@ Jubatus Examples
 |13. winequality                      |           |             | :+1:       |      |       |         |       |        |Ru           |
 |14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
 |15. iris                             | :+1:      |             |            |      |       |         |       |        |Py           |   
+|16. network\_intrusion\_detection    |           |             |            |      |       | :+1:    |       |        |Py/Ru        |
+
+Python を使用したサンプルについて
+------------------------------------
+
+Jubatus の Python クライアントは Python 3.x をサポートしていますが、本リポジトリの一部のサンプルアプリケーションは Python 3 で動作しない可能性があります。
