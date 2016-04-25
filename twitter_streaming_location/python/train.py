@@ -4,7 +4,13 @@
 import sys
 import json
 import re
-import httplib
+
+try:
+    # for Python 3
+    import http.client as httplib
+except ImportError:
+    # for Python 2
+    import httplib
 
 from tweepy.streaming import StreamListener, Stream
 from tweepy.auth import OAuthHandler
@@ -76,14 +82,14 @@ class Trainer(StreamListener):
 
         # Print trained tweet
         print_green(loc.name, ' ')
-        print detagged_text
+        print(detagged_text)
 
     def on_error(self, status_code):
         if status_code in httplib.responses:
             status_msg = httplib.responses[status_code]
         else:
             status_msg = str(status_code)
-        print "ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg)
+        print(("ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg)))
 
         # return False to stop on first error (do not retry)
         return False
@@ -109,7 +115,7 @@ def remove_hashtags_from_tweet(tweet, hashtags):
     for hashtag in hashtags:
         indices[hashtag['indices'][0]] = hashtag['indices'][1]
     pos = 0
-    text = u''
+    text = ''
     for begin in sorted(indices.keys()):
         text += tweet[pos:begin]
         pos = indices[begin]
@@ -133,4 +139,4 @@ if __name__ == '__main__':
     try:
         train_tweets()
     except KeyboardInterrupt:
-        print "Stopped."
+        print("Stopped.")

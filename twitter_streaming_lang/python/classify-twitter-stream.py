@@ -2,7 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import httplib
+
+try:
+    # for Python 3
+    import http.client as httplib
+except ImportError:
+    # for Python 2
+    import httplib
 
 from tweepy.streaming import StreamListener, Stream
 from tweepy.auth import OAuthHandler
@@ -57,14 +63,14 @@ class TweetAnalyzer(StreamListener):
             if est[0].label == self.highlight:
                 print_red(status.text)
             else:
-                print(status.text)
+                print((status.text))
 
     def on_error(self, status_code):
         if status_code in httplib.responses:
             status_msg = httplib.responses[status_code]
         else:
             status_msg = str(status_code)
-        print "ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg)
+        print("ERROR: Twitter Streaming API returned %d (%s)" % (status_code, status_msg))
 
         # return False to stop on first error (do not retry)
         return False
@@ -80,4 +86,4 @@ if __name__ == '__main__':
         else:
             classify_tweets("ja")
     except KeyboardInterrupt:
-        print "Stopped."
+        print("Stopped.")

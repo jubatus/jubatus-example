@@ -25,16 +25,16 @@ def estimate_location_for(text):
         est = sorted(result[0], key=lambda e: e.score, reverse=True)
 
         # Print the result
-        print "Estimated Location for %s:" % text
+        print(("Estimated Location for %s:" % text))
         for e in est:
-            print "  " + e.label + " (" + str(e.score) + ")"
+            print(("  " + e.label + " (" + str(e.score) + ")"))
     else:
         # No estimation results; maybe we haven't trained enough
-        print "No estimation results available."
-        print "Train more tweets or try using another text."
+        print("No estimation results available.")
+        print("Train more tweets or try using another text.")
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         estimate_location_for(sys.argv[1])
     else:
-        print "Usage: %s tweet_text" % sys.argv[0]
+        print(("Usage: %s tweet_text" % sys.argv[0]))
