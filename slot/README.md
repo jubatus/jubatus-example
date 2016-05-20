@@ -6,10 +6,13 @@ This example optimizes the cumulative reward of a sequence of slot machine plays
 You can try various simulation settings by modifying the config file(config/slot.conf).
 
 ## Preparation
-
+### [Python]
 - Install Jubatus 0.7.0 or later
 - Install Jubatus Python Client
 
+### [Java]
+- Install Jubatus 0.7.0 or later
+- Install JDK 1.7 or later
 
 ## How to try
 
@@ -20,10 +23,16 @@ jubabandit -f config/epsilon.json &
 ```
 
 ### Execute simulation
-
+### [Python]
 ```
 cd python
 python slot.py
+```
+
+### [Java]
+```
+cd java
+./run.sh
 ```
 
 ## Config file

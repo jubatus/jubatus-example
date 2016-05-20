@@ -41,11 +41,11 @@
 			<artifactId>jubatus</artifactId>
 			<version>LATEST</version>
 		</dependency>
-        <dependency>
-            <groupId>ca.szc.configparser</groupId>
-            <artifactId>java-configparser</artifactId>
-            <version>0.2</version>
-        </dependency>
+		<dependency>
+			<groupId>ca.szc.configparser</groupId>
+			<artifactId>java-configparser</artifactId>
+			<version>0.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-math3</artifactId>

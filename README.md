@@ -55,7 +55,7 @@ Jubatus Examples
    - 回帰を利用した最も簡単なサンプルです。Wine Quality データセットを利用して、ワインの情報から品質を推測します。
 14. slot
    - bandit
-   - python
+   - python/Java
    - 多腕バンディットを利用したサンプルです。報酬の期待値が異なる複数のスロットマシンから、一定回数のプレイで得られる報酬を多腕バンディットで最大化します。
 15. iris
    - classifier
@@ -77,7 +77,7 @@ Jubatus Examples
 |11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py           |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  |        |Py           |
 |13. winequality                      |           |             | :+1:       |      |       |         |       |        |Ru           |
-|14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py           |   
+|14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
 |15. iris                             | :+1:      |             |            |      |       |         |       |        |Py           |   
 
 Python を使用したサンプルについて
