@@ -31,7 +31,7 @@ Jubatus Examples
    - レコメンダーを利用した最も簡単なサンプルです。野球選手のプロフィール情報を学習して、未知のそれぞれの選手と最も類似した特徴の選手を探します。
 8. rent
    - regression
-   - Python/Ruby
+   - Python/Ruby/Java
    - 回帰を利用した最も簡単なサンプルです。物件情報から、その物件の家賃を予測します。
 9. train\_route
    - graph
@@ -71,7 +71,7 @@ Jubatus Examples
 | 5. malware\_classification          | :+1:      |             |            |      |       |         |       |        |C++          |
 | 6. movielens                        |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru/Ja |
 | 7. npb\_similar\_player             |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru    |
-| 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru        |
+| 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru/Ja     |
 | 9. train\_route                     |           |             |            |      | :+1:  |         |       |        |Py           |
 |10. language\_detection              | :+1:      |             |            |      |       |         |       |        |Py/Ru        |
 |11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py           |
