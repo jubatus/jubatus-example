@@ -9,6 +9,7 @@ require 'json'
 
 require 'jubatus/anomaly/client'
 
+# 0. set keyboard interruption handler"
 Signal.trap(:INT) {
     print "You pressed Ctrl+C."
     print "Stop running the job."

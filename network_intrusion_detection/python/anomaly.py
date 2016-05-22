@@ -8,13 +8,14 @@ from jubatus.common import Datum
 
 NAME = "anom_kddcup";
 
+# handle keyboard interruption"
 def do_exit(sig, stack):
     print('You pressed Ctrl+C.')
     print('Stop running the job.')
     sys.exit(0)
 
 if __name__ == '__main__':
-
+    # 0. KeyboardInterruptハンドラの設定
     signal.signal(signal.SIGINT, do_exit)
 
     # 1.Jubatus Serverへの接続設定
