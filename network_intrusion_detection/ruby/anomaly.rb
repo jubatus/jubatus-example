@@ -9,6 +9,11 @@ require 'json'
 
 require 'jubatus/anomaly/client'
 
+Signal.trap(:INT) {
+    print "You pressed Ctrl+C."
+    print "Stop running the job."
+    exit(0)
+}
 
 # 1. Configuration to connect Jubatus Server
 client = Jubatus::Anomaly::Client::Anomaly.new($host, $port, $name)
@@ -65,7 +70,7 @@ open("../kddcup.data_10_percent.txt") { |f|
 
 		# 4. output results
                 if (ret.score != Float::INFINITY) and (ret.score != 1.0) then
-                    print ret, label
+                    print ret, ' ', label
                 end
         }
 }
