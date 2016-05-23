@@ -43,7 +43,7 @@ Jubatus Examples
    - 分類器を用いた言語推定のデモです。欧米の言語に含まれる単語から言語を推定します。
 11. trivial\_stat
    - stat
-   - Python
+   - Python/Java
    - 統計分析機能を利用した最も簡単なサンプルです。果物の直径・重さ・価格を学習し、フルーツごとにパラメータの合計値や標準偏差などの統計分析を行います。
 12. trivial\_burst
    - burst
@@ -74,7 +74,7 @@ Jubatus Examples
 | 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru        |
 | 9. train\_route                     |           |             |            |      | :+1:  |         |       |        |Py           |
 |10. language\_detection              | :+1:      |             |            |      |       |         |       |        |Py/Ru        |
-|11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py           |
+|11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py/Ja        |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  |        |Py           |
 |13. winequality                      |           |             | :+1:       |      |       |         |       |        |Ru           |
 |14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py           |   
