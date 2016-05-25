@@ -31,7 +31,7 @@ Jubatus Examples
    - レコメンダーを利用した最も簡単なサンプルです。野球選手のプロフィール情報を学習して、未知のそれぞれの選手と最も類似した特徴の選手を探します。
 8. rent
    - regression
-   - Python/Ruby
+   - Python/Ruby/Java
    - 回帰を利用した最も簡単なサンプルです。物件情報から、その物件の家賃を予測します。
 9. train\_route
    - graph
@@ -43,7 +43,7 @@ Jubatus Examples
    - 分類器を用いた言語推定のデモです。欧米の言語に含まれる単語から言語を推定します。
 11. trivial\_stat
    - stat
-   - Python
+   - Python/Java
    - 統計分析機能を利用した最も簡単なサンプルです。果物の直径・重さ・価格を学習し、フルーツごとにパラメータの合計値や標準偏差などの統計分析を行います。
 12. trivial\_burst
    - burst
@@ -55,12 +55,16 @@ Jubatus Examples
    - 回帰を利用した最も簡単なサンプルです。Wine Quality データセットを利用して、ワインの情報から品質を推測します。
 14. slot
    - bandit
-   - python
+   - python/Java
    - 多腕バンディットを利用したサンプルです。報酬の期待値が異なる複数のスロットマシンから、一定回数のプレイで得られる報酬を多腕バンディットで最大化します。
 15. iris
    - classifier
    - python
    - 分類器を用いた簡単なサンプルです。iris データセットを利用して、花びらの幅、長さ、がくの幅、長さから、アヤメの種類を推定します。
+16. network\_intrusion\_detection
+    - anomaly
+    - Python/Ruby
+    - アノマリーを用いた簡単なサンプルです。KDDCup 1999 データセットを利用して、ネットワーク侵入検出を行います。
 
 |                                     | classifer | recommender | regression | stat | graph | anomaly | burst | bandit |Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------|-------------|
@@ -71,14 +75,15 @@ Jubatus Examples
 | 5. malware\_classification          | :+1:      |             |            |      |       |         |       |        |C++          |
 | 6. movielens                        |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru/Ja |
 | 7. npb\_similar\_player             |           | :+1:        |            |      |       |         |       |        |C++/Py/Ru    |
-| 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru        |
+| 8. rent                             |           |             | :+1:       |      |       |         |       |        |Py/Ru/Ja     |
 | 9. train\_route                     |           |             |            |      | :+1:  |         |       |        |Py           |
 |10. language\_detection              | :+1:      |             |            |      |       |         |       |        |Py/Ru        |
-|11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py           |
+|11. trivial\_stat                    |           |             |            | :+1: |       |         |       |        |Py/Ja        |
 |12. trivial\_burst                   |           |             |            |      |       |         | :+1:  |        |Py           |
 |13. winequality                      |           |             | :+1:       |      |       |         |       |        |Ru           |
-|14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py           |   
+|14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
 |15. iris                             | :+1:      |             |            |      |       |         |       |        |Py           |   
+|16. network\_intrusion\_detection    |           |             |            |      |       | :+1:    |       |        |Py/Ru        |
 
 Python を使用したサンプルについて
 ------------------------------------
