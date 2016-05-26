@@ -84,8 +84,3 @@ Jubatus Examples
 |14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
 |15. iris                             | :+1:      |             |            |      |       |         |       |        |Py           |   
 |16. network\_intrusion\_detection    |           |             |            |      |       | :+1:    |       |        |Py/Ru/Ja     |
-
-Python を使用したサンプルについて
-------------------------------------
-
-Jubatus の Python クライアントは Python 3.x をサポートしていますが、本リポジトリの一部のサンプルアプリケーションは Python 3 で動作しない可能性があります。
