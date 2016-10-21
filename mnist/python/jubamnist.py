@@ -1,4 +1,3 @@
-import numpy as np
 import sys,csv,tarfile
 import os.path
 import jubatus
