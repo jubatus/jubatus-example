@@ -65,6 +65,10 @@ Jubatus Examples
     - anomaly
     - Python/Ruby/Java
     - アノマリーを用いた簡単なサンプルです。KDDCup 1999 データセットを利用して、ネットワーク侵入検出を行います。
+17. mnist
+	- classifier
+	- Python
+	- 画像特徴抽出プラグインを用いた簡単なサンプルです。mnistデータセットを利用して、画像から数字を推定します。
 
 |                                     | classifer | recommender | regression | stat | graph | anomaly | burst | bandit |Language     |
 |-------------------------------------|-----------|-------------|------------|------|-------|---------|-------|--------|-------------|
@@ -84,3 +88,4 @@ Jubatus Examples
 |14. slot                             |           |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
 |15. iris                             | :+1:      |             |            |      |       |         |       |        |Py           |   
 |16. network\_intrusion\_detection    |           |             |            |      |       | :+1:    |       |        |Py/Ru/Ja     |
+|17. mnist                            | :+1:      |             |            |      |       |         |       |        |Py           |
