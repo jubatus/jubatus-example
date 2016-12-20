@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     recommender = client.Recommender("127.0.0.1", 9199, 'movie_len')
 
-    for i in range(1,943):
+    for i in range(1,944):
         sr = recommender.similar_row_from_id(str(i) , 10);
         print("user ", str(i),  " is similar to :", list(map(str, sr)))
   
