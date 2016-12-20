@@ -20,7 +20,7 @@ public class Analyze {
           RecommenderClient client = new RecommenderClient(HOST, PORT, NAME, 5);
 
           // 2. Get the recommended results for every user
-          for (int i=0; i<=943; i++) {
+          for (int i=1; i<=943; i++) {
             List<IdWithScore> rec = client.similarRowFromId(Integer.toString(i), 10);
          //3. ouput result
             System.out.print("audience " + Integer.toString(i) + " is similar to : " );
