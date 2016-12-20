@@ -5,7 +5,7 @@ require "pp"
 
 recommender = Jubatus::Recommender::Client::Recommender.new "127.0.0.1", 9199, "movie_len"
 
-Array.new(943){|index| "#{index}"}.each{|n|
+(1..943).each{|n|
   sr = recommender.similar_row_from_id(n.to_s, 10)
   print "user#{n} is similar to "
   sr.each{|user_tuple|
