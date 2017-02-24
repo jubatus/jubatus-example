@@ -73,24 +73,29 @@ Jubatus Examples
 	- clustering
 	- Python
 	- 2次元データを使ってクラスタリングを行います
+19. AAAI
+    - nearest neighbor
+    - Python
+    - 近傍探索を用いた簡単なサンプルです。AAAIのaccepted paperから類似した論文を探します。
 
-|                                     | classifer | clustering | recommender | regression | stat | graph | anomaly | burst | bandit |Language     |
-|-------------------------------------|-----------|------------|-------------|------------|------|-------|---------|-------|--------|-------------|
-| 1. shogun                           | :+1:      |            |             |            |      |       |         |       |        |Py/Ru/Ja     |
-| 2. gender                           | :+1:      |            |             |            |      |       |         |       |        |C++/Py/Ru/Ja |
-| 3. twitter\_streaming\_lang         | :+1:      |            |             |            |      |       |         |       |        |Py           |
-| 4. twitter\_streaming\_location     | :+1:      |            |             |            |      |       |         |       |        |Py/Ja        |
-| 5. malware\_classification          | :+1:      |            |             |            |      |       |         |       |        |C++          |
-| 6. movielens                        |           |            | :+1:        |            |      |       |         |       |        |C++/Py/Ru/Ja |
-| 7. npb\_similar\_player             |           |            | :+1:        |            |      |       |         |       |        |C++/Py/Ru    |
-| 8. rent                             |           |            |             | :+1:       |      |       |         |       |        |Py/Ru/Ja     |
-| 9. train\_route                     |           |            |             |            |      | :+1:  |         |       |        |Py           |
-|10. language\_detection              | :+1:      |            |             |            |      |       |         |       |        |Py/Ru        |
-|11. trivial\_stat                    |           |            |             |            | :+1: |       |         |       |        |Py/Ja        |
-|12. trivial\_burst                   |           |            |             |            |      |       |         | :+1:  |        |Py           |
-|13. winequality                      |           |            |             | :+1:       |      |       |         |       |        |Ru           |
-|14. slot                             |           |            |             |            |      |       |         |       |  :+1:  |Py/Ja        |   
-|15. iris                             | :+1:      |            |             |            |      |       |         |       |        |Py           |   
-|16. network\_intrusion\_detection    |           |            |             |            |      |       | :+1:    |       |        |Py/Ru/Ja     |
-|17. mnist                            | :+1:      |            |             |            |      |       |         |       |        |Py           |
-|18. clustering                       |           | :+1:       |             |            |      |       |         |       |        |Py           |
+|                                     | classifer | clustering | recommender | regression | stat | graph | anomaly | burst | bandit | nearest neighbor |Language     |
+|-------------------------------------|-----------|------------|-------------|------------|------|-------|---------|-------|--------|------------------|-------------|
+| 1. shogun                           | :+1:      |            |             |            |      |       |         |       |        |                  |Py/Ru/Ja     |
+| 2. gender                           | :+1:      |            |             |            |      |       |         |       |        |                  |C++/Py/Ru/Ja |
+| 3. twitter\_streaming\_lang         | :+1:      |            |             |            |      |       |         |       |        |                  |Py           |
+| 4. twitter\_streaming\_location     | :+1:      |            |             |            |      |       |         |       |        |                  |Py/Ja        |
+| 5. malware\_classification          | :+1:      |            |             |            |      |       |         |       |        |                  |C++          |
+| 6. movielens                        |           |            | :+1:        |            |      |       |         |       |        |                  |C++/Py/Ru/Ja |
+| 7. npb\_similar\_player             |           |            | :+1:        |            |      |       |         |       |        |                  |C++/Py/Ru    |
+| 8. rent                             |           |            |             | :+1:       |      |       |         |       |        |                  |Py/Ru/Ja     |
+| 9. train\_route                     |           |            |             |            |      | :+1:  |         |       |        |                  |Py           |
+|10. language\_detection              | :+1:      |            |             |            |      |       |         |       |        |                  |Py/Ru        |
+|11. trivial\_stat                    |           |            |             |            | :+1: |       |         |       |        |                  |Py/Ja        |
+|12. trivial\_burst                   |           |            |             |            |      |       |         | :+1:  |        |                  |Py           |
+|13. winequality                      |           |            |             | :+1:       |      |       |         |       |        |                  |Ru           |
+|14. slot                             |           |            |             |            |      |       |         |       |  :+1:  |                  |Py/Ja        |   
+|15. iris                             | :+1:      |            |             |            |      |       |         |       |        |                  |Py           |   
+|16. network\_intrusion\_detection    |           |            |             |            |      |       | :+1:    |       |        |                  |Py/Ru/Ja     |
+|17. mnist                            | :+1:      |            |             |            |      |       |         |       |        |                  |Py           |
+|18. clustering                       |           | :+1:       |             |            |      |       |         |       |        |                  |Py           |
+|19. AAAI                             |           |            |             |            |      |       |         |       |        |  :+1:            |Py           |
