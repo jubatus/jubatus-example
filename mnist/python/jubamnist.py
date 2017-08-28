@@ -32,7 +32,7 @@ def get_labels(path):
 def get_traindata(labels):
 	traindata = []
 	for index in range(n_train):
-		imgfile = "{}.jpg"
+		imgfile = "{0}.jpg"
 		img = os.path.join(dir,imgfile.format(index))
 		with open(img,"rb") as f:
 			binary = f.read()
@@ -47,7 +47,7 @@ def get_testdata(labels):
 	testdata = []
 	testlabels = []
 	for index in range(n_train,(n_train+n_test)):
-		imgfile = "{}.jpg"
+		imgfile = "{0}.jpg"
 		img = os.path.join(dir, imgfile.format(index))
 		with open(img,"rb") as f:
 			binary = f.read()
