@@ -12,8 +12,8 @@ Twitter Streaming Classification
 
 * 各言語版の Wikipedia 要約データをダウンロードしてください (2 言語以上)。
 
-  - 英語版: http://dumps.wikimedia.org/jawiki/latest/jawiki-latest-abstract.xml
-  - 日本語版: http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract.xml
+  - 日本語版: http://dumps.wikimedia.org/jawiki/latest/jawiki-latest-abstract.xml
+  - 英語版: http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract.xml
   - ドイツ語版: http://dumps.wikimedia.org/dewiki/latest/dewiki-latest-abstract.xml
   - ...
 
