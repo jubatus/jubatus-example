@@ -1,4 +1,4 @@
-#AAAIの類似した論文探索
+# AAAIの類似した論文探索
 
 jubatusの近傍探索機能を使ってAAAIのaccepted paperから類似した論文を探します。
 

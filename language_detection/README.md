@@ -1,5 +1,4 @@
-==========
- 自然言語分類
+自然言語分類
 ==========
 
 欧米の言語を見分ける事は並の日本人には困難です。
@@ -59,7 +58,7 @@ non_split.json というJSONファイルも用意してあります。
 行の完全一致でしか学習が行われなくなるのでtest.rbの結果がうまく行かなくなることが観測できます。
 
 ```
-$ jubaclassifier -f non_split.json &
+ $ jubaclassifier -f non_split.json &
  $ ruby train.rb
  $ ruby test.rb
  > this is a pen（←手で入力する
