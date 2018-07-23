@@ -15,7 +15,7 @@ normalize_num_feature::normalize_num_feature(double max, double min)
 
 
 void normalize_num_feature::add_feature(const std::string& key, double value,
-                           std::vector<std::pair<std::string, float> >& ret_fv) const{
+                           std::vector<std::pair<std::string, double> >& ret_fv) const{
   ret_fv.push_back(make_pair(key, (value - min_val) / (max_val - min_val)));
 }
 

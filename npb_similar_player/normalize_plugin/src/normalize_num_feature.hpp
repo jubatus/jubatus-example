@@ -7,7 +7,7 @@
 class normalize_num_feature : public jubatus::core::fv_converter::num_feature {
   public:
     void add_feature(const std::string& key, double value,
-                           std::vector<std::pair<std::string, float> >& ret_fv) const;
+                           std::vector<std::pair<std::string, double> >& ret_fv) const;
     normalize_num_feature(double max, double min);
 
   private:
