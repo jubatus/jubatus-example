@@ -150,7 +150,7 @@ public class Lof {
                 result = client.add(datum);
 
                 // 4. 結果の出力
-                if (!(Float.isInfinite(result.score)) && result.score != 1.0) {
+                if (!(Double.isInfinite(result.score)) && result.score != 1.0) {
                     System.out.print("('" + result.id + "', " + result.score + ") " + strAry[strAry.length - 1] + "\n");
                 }
             }

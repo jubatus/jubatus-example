@@ -52,7 +52,7 @@ public class Rent {
                     .addNumber(csvHeader[4], Double.parseDouble(line[4]))
                     .addString(csvHeader[5], line[5]);
 
-            loadedDatas.add(new ScoredDatum(Float.parseFloat(line[0]), datum));
+            loadedDatas.add(new ScoredDatum(Double.parseDouble(line[0]), datum));
         }
         trainDatas = loadedDatas;
 
@@ -90,7 +90,7 @@ public class Rent {
             client.train(trainDatas);
 
             //Analyze
-            List<Float> resultList = client.estimate(testDatas);
+            List<Double> resultList = client.estimate(testDatas);
 
             //Result
             System.out.println(String.format("物件の家賃予測: 月%.1f万円" , resultList.get(0)));
